@@ -1,5 +1,5 @@
 # Podstawowe informacje o programowaniu
-
+[`back to README.md`](../README.md)
 ## 5. Pozycyjne systemy liczbowe i konwersje pomiędzy nimi.
 ...
 ## 6. Sposoby cyfrowej reprezentacji liczby całkowitej i rzeczywistej.

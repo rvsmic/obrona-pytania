@@ -1,5 +1,5 @@
 # Asyko i systemy wbudowane
-
+[`back to README.md`](../README.md)
 ## 28. Różnice pomiędzy obsługą zdarzeń w przerwaniach sprzętowych a obsługą zdarzeń w pętli programowej.
 ## 29. Powody i przykłady stosowania mikrokontrolerów zamiast typowych komputerów. 
 ---

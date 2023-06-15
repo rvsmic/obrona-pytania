@@ -1,5 +1,5 @@
 # Paradygmaty programowania
-
+[`back to README.md`](../README.md)
 ## 48. Główne paradygmaty programowania – charakterystyka i przykłady. 
 ## 3
 ## 49. Gramatyki bezkontekstowe – definicje, charakterystyki i przykłady.

@@ -1,5 +1,5 @@
 # Algorytmy
-
+[`back to README.md`](../README.md)
 ## 18. Algorytmy sortowania.
 ## 19. Strategia „dziel i zwyciężaj” budowania algorytmów.
 ## 20. Algorytmy typu zachłannego.
