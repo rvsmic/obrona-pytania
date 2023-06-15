@@ -5,7 +5,6 @@
 * [Podstawowe informacje o programowaniu](src/podstawowe-informacje-o-programowaniu.md) 5-8
 * [Sieci komputerowe](src/sieci.md) 9-13
 * [Programowanie obiektowe](src/programowanie-obiektowe.md) 14-17
-<!-- * Paradygmaty 17? -->
 * [Algorytmy i struktury danych](src/algorytmy.md) 18-22
 * [Systemy operacyjne](src/systemy-operacyjne.md) 23-27
 * [Asyko, wbudowane](src/asyko-systemy-wbudowane.md) 28-29
