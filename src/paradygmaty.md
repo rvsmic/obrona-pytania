@@ -1,7 +1,6 @@
 # Paradygmaty programowania
 [`back to README.md`](../README.md)
-## 48. Główne paradygmaty programowania – charakterystyka i przykłady. 
-## 3
+## 48. Główne paradygmaty programowania – charakterystyka i przykłady
 ## 49. Gramatyki bezkontekstowe – definicje, charakterystyki i przykłady.
 ## 50. Analiza leksykalna, syntaktyczna i semantyczna kodu.
 ## 51. Rodzaje błędów w kontekście analizy leksykalnej, syntaktycznej i semantycznej kodu.
