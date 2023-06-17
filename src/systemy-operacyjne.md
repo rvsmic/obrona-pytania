@@ -51,5 +51,55 @@ System operacyjny — program działający jako pośrednik między użytkownikie
   * Zazwyczaj jako otwarte systemy operacyjne spotyka się systemy w pełni programowe, czasowo niedeterministyczne stosujące wywłaszczenie przy przełączaniu zadań. Wbudowane systemy operacyjne są najczęściej czasowo deterministyczne, zazwyczaj nie stosują wywłaszczenia zadań, bywa, że są realizowane również w sprzęcie.
 
 ## 25. Procesy i wątki – charakterystyka i problemy.
+* Proces — egzemplarz wykonywanego programu
+  * każdy proces ma swój unikatowy numer (PID)
+  * aby współbieżnie wykonać pewne fragmenty programu program może utworzyć określoną ilość wątków
+  * każdy proces posiada proces nadrzędny (rodzica) i może posiadać procesy podrzędne (dzieci) — drzewo procesów
+  * każdy proces ma odrębne zasoby
+    * własną przestrzeń adresową
+    * listę otwartych plików, urządzeń
+    * czas procesora
+    * pamięć
+  * proces składa się z
+    * kodu programu
+    * licznika rozkazów
+    * stosu programu
+    * sekcji danych
+  * wykonanie procesu musi przebiegać sekwencyjnie;może przyjmować kilka stanów:
+    * aktualnie wykonywany
+    * czekający na udostępnienie zasobów
+    * uśpiony
+    * przeznaczony do zniszczenia
+    * proces zombie — wpis w tablicy procesów opisujący program, którego wykonanie w systemie operacyjnym zostało zakończone, ale którego zamknięcie nie zostało jeszcze obsłużone przez proces rodzica
+    * właśnie tworzony itd.
+  * tworzenie procesów
+    * uruchomienie programu za pomocą powłoki systemowej, proces wywołujący wykonuje polecenie fork lub jego pochodną
+    * System operacyjny tworzy przestrzeń adresową dla procesu oraz strukturę opisującą nowy proces
+      * wypełnia strukturę opisującą proces,
+      * kopiuje do przestrzeni adresowej procesu dane i kod, zawarte w pliku wykonywalnym,
+      * mapuje współdzielone zasoby systemowe w przestrzeń adresową procesu,
+      * ustawia stan procesu na działający,
+      * dołącza nowy proces do kolejki procesów oczekujących na procesor (ustala jego priorytet),
+      * zwraca sterowanie powłoce systemowej.
+
+  * kończenie procesów
+    * Proces wykonuje ostatnią instrukcję – zwraca do systemu operacyjnego kod zakończenia. Jeśli proces zakończył się poprawnie, zwraca wartość 0, w przeciwnym wypadku zwraca wartość kodu błędu.
+    * Jeśli ok, to stan procesu zmienia się na gotowy do zniszczenia i rozpoczyna zwalnianie wszystkich zasobów, które w czasie działania procesu zostały temu procesowi przydzielone.
+    * System operacyjny po kolei kończy wszystkie procesy potomne w stosunku do procesu macierzystego.
+    * System operacyjny zwalnia przestrzeń adresową procesu. Jest to dosłowna śmierć procesu.
+    * System operacyjny usuwa proces z kolejki procesów gotowych do uruchomienia i szereguje zadania. Jest to ostatnia czynność wykonywana na rzecz procesu.
+    * Procesor zostaje przydzielony innemu procesowi.
+
+* Wątek (thread) — część programu wykonywana współbieżnie w obrębie jednego procesu
+  * w jednym procesie może istnieć wiele wątków
+  * wątki współdzielą prawie wszystkie zasoby procesu z wyjątkiem czasu procesora, który jest przydzielany każdemu wątkowi osobno dzięki temu
+    * Wątki wymagają mniej zasobów do działania i też mniejszy jest czas ich tworzenia.
+    * Dzięki współdzieleniu przestrzeni adresowej (pamięci) wątki jednego zadania mogą się między sobą komunikować w bardzo łatwy sposób, niewymagający pomocy ze strony systemu operacyjnego.
+  * W systemach wieloprocesorowych, a także w systemach z wywłaszczaniem, wątki mogą być wykonywane równocześnie (współbieżnie)
+* Problemy
+  * wątki wykonywane równocześnie współdzielą pamięć adresową — równoczesny dostęp do wspólnych danych może powodować utratę spójności danych i w konsekwencji błędne działanie programu — do zapobiegania temu służą mechanizmy synchronizacji ( semafory, muteksy, sekcje krytyczne)
+
+
+
 ## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym.
 ## 27. Organizacja systemu plików i pamięci zewnętrznej. 
