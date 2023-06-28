@@ -10,43 +10,44 @@ Postać normalna — postać relacji w bazie danych, w której nie występuje re
     * nie zawiera kolekcji (powtarzających się grup informacji)
     * kolejność wierszy może być dowolna (znaczenie danych nie zależy od kolejności wierszy)
     
-    ![Alt text](image.png)
-    ![Alt text](image-1.png)
+    ![Alt text](/src/img/bazy-danych/przed_normalizacja.png)
+    ![Alt text](/src/img/bazy-danych/1NF_1.png)
 * Druga postać normalna (2NF)
     * jest w 1 NF
     * żadna kolumna niekluczowa nie jest częściowo funkcyjnie zależna od jakiegokolwiek klucza potencjalnego
     * Przykład: klucz potencjalny składa się z dwóch pól: "Imię" oraz "Nazwisko". Przy założeniu, że każde imię ma przypisaną jedną płeć, czyli, że płeć zależy tylko od jednego z atrybutów klucza potencjalnego, tabela nie spełnia warunków na drugą postać normalną.
 
-    ![Alt text](image-2.png)
-    ![Alt text](image-3.png)
-    ![Alt text](image-4.png)
+    ![Alt text](/src/img/bazy-danych/przed_normalizacja_2NF.png)
+    ![Alt text](/src/img/bazy-danych/2NF_1.png)
+    ![Alt text](/src/img/bazy-danych/2NF_2.png)
 * Trzecia postać normalna (3NF)
     * jest w 2 NF
     * żaden atrybut niekluczowy nie jest zależny funkcyjnie od innych atrybutów niekluczowych
     * Przykład: Klucz potencjalny składa się tu z dwóch pól: "Imię" oraz "Nazwisko". Oba atrybuty niekluczowe: "Stanowisko" oraz "Stawka za godzinę" są zależne od całego klucza potencjalnego- tzn. dany pracownik ma przyporządkowane jedno stanowisko i jedną stawkę godzinową. Przy założeniu, że każde stanowisko jest tak samo płatne, to wartości w kolumnie „Stawka za godzinę” są zależne jedynie od pola „Stanowisko”, a tylko pośrednio od klucza potencjalnego. 
     
-    ![Alt text](image-5.png)
-    ![Alt text](image-6.png)
-    ![Alt text](image-7.png)
+    ![Alt text](/src/img/bazy-danych/przed_normalizacja_3NF.png)
+    ![Alt text](/src/img/bazy-danych/3NF_1.png)
+    ![Alt text](/src/img/bazy-danych/3NF_2.png)
 ## 35. Modele baz danych (logiczny, relacyjny, fizyczny).
 ### Model logiczny
 Model logiczny składa się ze zbioru encji  oraz ich atrybutów (wraz z określeniem typu danych, wymagalności,
 ograniczeń) i klucze główne. Pomiędzy tak zdefiniowanymi zbiorami encji kreśli się relacje o określonych własnościach.
-![Alt text](image-8.png)
+![Alt text](/src/img/bazy-danych/logiczny.png)
 Związki pomiędzy encjami w modelu logicznym (CMD):
 * jeden do jednego (1:1) (wymagany z jednej
 strony)
-  ![Alt text](image-9.png)
+  ![Alt text](/src/img/bazy-danych/image-9.png)
 * jeden do wielu (1:N) (nie wymagany z żadnej strony)
-  ![Alt text](image-10.png)
+  ![Alt text](/src/img/bazy-danych/image-10.png)
 * wiele do jednego (N:1) (wymagany z jednej strony)
-  ![Alt text](image-12.png)
+  ![Alt text](/src/img/bazy-danych/image-12.png)
 * wiele do wielu (N:M) (nie wymagany)
-  ![Alt text](image-11.png)
+  ![Alt text](/src/img/bazy-danych/image-11.png)
 ### Model relacyjny
 ### Model fizyczny
 Model fizyczny (PDM) jest to model, który jest zależny od konkretnej implementacji bazy danych. W modelu fizycznym określa się typy danych, indeksy, klucze obce, ograniczenia, itp. Model fizyczny jest tworzony na podstawie modelu logicznego.
-![Alt text](image-13.png)
+![Alt text](/src/img/bazy-danych/image-13.png)
+
 ## 36. Rodzaje zapytań w języku SQL.
 Zapytania zaliczamy do jednej z czterech  kategorii:
 * SQL DML (ang. Data Manipulation Language – "język manipulacji danymi") — do wykonywania operacji na danych; (dane tekstowe muszą być zawsze ujęte w znaki pojedynczego cudzysłowu (')):
