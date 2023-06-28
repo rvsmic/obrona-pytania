@@ -48,6 +48,40 @@ strony)
 Model fizyczny (PDM) jest to model, który jest zależny od konkretnej implementacji bazy danych. W modelu fizycznym określa się typy danych, indeksy, klucze obce, ograniczenia, itp. Model fizyczny jest tworzony na podstawie modelu logicznego.
 ![Alt text](image-13.png)
 ## 36. Rodzaje zapytań w języku SQL.
+Zapytania zaliczamy do jednej z czterech  kategorii:
+* SQL DML (ang. Data Manipulation Language – "język manipulacji danymi") — do wykonywania operacji na danych; (dane tekstowe muszą być zawsze ujęte w znaki pojedynczego cudzysłowu (')):
+  * INSERT
+    * INSERT INTO pracownicy
+    (imie, nazwisko, pensja, staz) VALUES ('Jan', 'Kowalski', 5500, 1);
+  * UPDATE
+    * UPDATE pracownicy SET pensja = pensja * 1.1 WHERE staz > 2;
+  * DELETE
+    * DELETE FROM pracownicy WHERE imie = 'Jan' AND nazwisko = 'Kowalski';
+* SQL DDL (ang. Data Definition Language – "język definicji danych") — operacje na strukturach, w których przechowywane są dane:
+  * CREATE (np. CREATE TABLE, CREATE DATABASE) — utworzenie struktury (np, bazy, tablei, indeksu, itp.)
+    * CREATE TABLE pracownicy
+(
+    imie varchar(255), 
+    nazwisko varchar(255), 
+    pensja float,
+    staz int
+);
+  * DROP — usunięcie struktury
+    * DROP TABLE pracownicy;
+  * ALTER (np. ALTER TABLE ADD COLUMN ...)— zmiana struktury (dodanie kolumny, zmiana typu danych) 
+    * ALTER TABLE pracownicy
+    ADD dzial varchar(255);
+* SQL DCL (ang. Data Control Language – "język kontroli nad danymi") — do nadawania uprawnień do obiektów bazodanowych:
+  * GRANT — nadanie uprawnień do pojedynczych obiektów lub globalnie konkretnemu użytkownikowi (np. GRANT ALL PRIVILEGES ON EMPLOYEE TO PIOTR WITH GRANT OPTION – przyznanie wszystkich praw do tabeli EMPLOYEE użytkownikowi PIOTR z opcją pozwalającą mu nadawać prawa do tej tabeli)
+  * REVOKE — odebranie uprawnień (np. REVOKE ALL PRIVILEGES ON EMPLOYEE FROM PIOTR - odebranie użytkownikowi wszystkich praw do tabeli EMPLOYEE)
+  * DENY — odmowa uprawnień
+* SQL DQL (ang. Data Query Language – "język definiowania zapytań") — formułowanie zapytań do bazy danych:
+  * SELECT — często traktuje się jako część języka DML, ale to podejście nie wydaje się właściwe, ponieważ DML z definicji służy do manipulowania danymi - ich tworzenia, usuwania i uaktualniania.
+    * SELECT * FROM emp WHERE salary > 1000 order by seniority DESC; — DESC malejąco, ASC rosnąco
+  * SELECT INTO — dodatkowo modyfikuje (przepisuje, tworzy) dane; na pograniczu DML i DQL
+
+
+Instrukcje SQL w obrębie zapytań tradycyjnie zapisywane są wielkimi literami, jednak nie jest to wymóg. Każde zapytanie w SQL-u musi kończyć się znakiem średnika (;).
 ## 37. Funkcje w języku SQL.
 ## 38. Transakcje w bazach danych. 
 Transakcja w bazie danych — seria jednej lub więcej operacji wykonywanych jako pojedyncza, atomowa jednostka pracy (albo wszystkie operacje w transakcji zostaną zakończone sukcesem, albo żadna z nich nie zostanie zastosowana w bazie danych). Transakcje są wykorzystywane do zapewnienia spójności i integralności danych poprzez zapewnienie, że baza danych pozostaje spójna nawet w przypadku awarii systemu lub błędów. Są niezbędne do umożliwienia współbieżnego dostępu, zapewnienia atomowości,  odzyskiwania danych oraz zapewnienia właściwości ACID.
