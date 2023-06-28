@@ -102,4 +102,7 @@ System operacyjny — program działający jako pośrednik między użytkownikie
 
 
 ## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym.
+<!-- 
+Pamięć operacyjna — pamięć komputerowa adresowana i dostępna bezpośrednio przez procesor, a nie za pośrednictwem urządzeń wejścia-wyjścia. Większość procesorów wymaga by w pamięci operacyjnej były umieszczone rozkazy procesora (program) dostępne bezpośrednio dla jego jednostek wykonawczych, stąd pamięć operacyjna jest każdą pamięcią, która może być zmapowana w przestrzeń adresową procesora. -->
+
 ## 27. Organizacja systemu plików i pamięci zewnętrznej. 

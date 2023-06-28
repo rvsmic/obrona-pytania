@@ -29,6 +29,24 @@ Postać normalna — postać relacji w bazie danych, w której nie występuje re
     ![Alt text](image-6.png)
     ![Alt text](image-7.png)
 ## 35. Modele baz danych (logiczny, relacyjny, fizyczny).
+### Model logiczny
+Model logiczny składa się ze zbioru encji  oraz ich atrybutów (wraz z określeniem typu danych, wymagalności,
+ograniczeń) i klucze główne. Pomiędzy tak zdefiniowanymi zbiorami encji kreśli się relacje o określonych własnościach.
+![Alt text](image-8.png)
+Związki pomiędzy encjami w modelu logicznym (CMD):
+* jeden do jednego (1:1) (wymagany z jednej
+strony)
+  ![Alt text](image-9.png)
+* jeden do wielu (1:N) (nie wymagany z żadnej strony)
+  ![Alt text](image-10.png)
+* wiele do jednego (N:1) (wymagany z jednej strony)
+  ![Alt text](image-12.png)
+* wiele do wielu (N:M) (nie wymagany)
+  ![Alt text](image-11.png)
+### Model relacyjny
+### Model fizyczny
+Model fizyczny (PDM) jest to model, który jest zależny od konkretnej implementacji bazy danych. W modelu fizycznym określa się typy danych, indeksy, klucze obce, ograniczenia, itp. Model fizyczny jest tworzony na podstawie modelu logicznego.
+![Alt text](image-13.png)
 ## 36. Rodzaje zapytań w języku SQL.
 ## 37. Funkcje w języku SQL.
 ## 38. Transakcje w bazach danych. 
