@@ -11,6 +11,7 @@ Postać normalna — postać relacji w bazie danych, w której nie występuje re
     * kolejność wierszy może być dowolna (znaczenie danych nie zależy od kolejności wierszy)
     
     ![Alt text](/src/img/bazy-danych/przed_normalizacja.png)
+
     ![Alt text](/src/img/bazy-danych/1NF_1.png)
 * Druga postać normalna (2NF)
     * jest w 1 NF
@@ -18,16 +19,22 @@ Postać normalna — postać relacji w bazie danych, w której nie występuje re
     * Przykład: klucz potencjalny składa się z dwóch pól: "Imię" oraz "Nazwisko". Przy założeniu, że każde imię ma przypisaną jedną płeć, czyli, że płeć zależy tylko od jednego z atrybutów klucza potencjalnego, tabela nie spełnia warunków na drugą postać normalną.
 
     ![Alt text](/src/img/bazy-danych/przed_normalizacja_2NF.png)
+
     ![Alt text](/src/img/bazy-danych/2NF_1.png)
+
     ![Alt text](/src/img/bazy-danych/2NF_2.png)
+
 * Trzecia postać normalna (3NF)
     * jest w 2 NF
     * żaden atrybut niekluczowy nie jest zależny funkcyjnie od innych atrybutów niekluczowych
     * Przykład: Klucz potencjalny składa się tu z dwóch pól: "Imię" oraz "Nazwisko". Oba atrybuty niekluczowe: "Stanowisko" oraz "Stawka za godzinę" są zależne od całego klucza potencjalnego- tzn. dany pracownik ma przyporządkowane jedno stanowisko i jedną stawkę godzinową. Przy założeniu, że każde stanowisko jest tak samo płatne, to wartości w kolumnie „Stawka za godzinę” są zależne jedynie od pola „Stanowisko”, a tylko pośrednio od klucza potencjalnego. 
     
     ![Alt text](/src/img/bazy-danych/przed_normalizacja_3NF.png)
+
     ![Alt text](/src/img/bazy-danych/3NF_1.png)
+
     ![Alt text](/src/img/bazy-danych/3NF_2.png)
+    
 ## 35. Modele baz danych (logiczny, relacyjny, fizyczny).
 ### Model logiczny
 Model logiczny składa się ze zbioru encji  oraz ich atrybutów (wraz z określeniem typu danych, wymagalności,
