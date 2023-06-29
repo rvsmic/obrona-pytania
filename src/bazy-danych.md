@@ -44,6 +44,34 @@ strony)
 * wiele do wielu (N:M) (nie wymagany)
   ![Alt text](/src/img/bazy-danych/image-11.png)
 ### Model relacyjny
+Model relacyjny jest oparty na matematycznym pojęciu relacji, która jest reprezentowana
+fizycznie jako tabela. W modelu tym, strukturą danych jest relacja.
+
+Model ten wprowadził:
+* Solidne podstawy matematyczne (rachunek relacji) pozwalający rozwiązywać problemy
+semantyki, spójności i redundancji danych.
+* Umożliwienie przy wykorzystaniu algebry relacji rozwoju języków przetwarzania
+danych opartych na przetwarzaniu zbiorów
+
+Relacja posiada następujące cechy:
+* każdy atrybut relacji ma unikalną nazwę,
+* porządek atrybutów w relacji nie jest istotny,
+* porządek krotek w relacji nie jest istotny i nie jest elementem definicji relacji,
+* wartości atrybutów są atomowe (elementarne),
+* relacja nie zawiera rekordów (krotek) powtarzających się.
+
+Relacyjna baza danych:
+* Baza danych jest zbiorem powiązanych relacji.
+* Schemat relacji jest zbiorem {atrybut, dziedzina, [ograniczenia integralnościowe]}.
+* Schemat bazy danych jest zbiorem schematów relacji.
+* Relacja jest zbiorem krotek.
+* Krotka jest listą wartości atomowych.
+* Klucz główny relacji - atrybut lub grupa atrybutów jednoznacznie znakująca wszystkie możliwe krotki (unikalność wartości klucza).
+* Klucz prosty - klucz składający się z jednego atrybutu
+* Klucz złożony - klucz składający się z grupy atrybutów.
+* Klucz naturalny - klucz składający się z atrybutów występujących naturalnie w projektowanej relacji, np. PESEL pracownika.
+* Klucz sztuczny - wprowadzony sztucznie atrybut, zaprojektowany z myślą o pełnieniu funkcji klucza głównego, np. ID_PRAC typu liczby rzeczywistej,wzrastającej automatycznie przy wprowadzaniu nowej krotki.
+
 ### Model fizyczny
 Model fizyczny (PDM) jest to model, który jest zależny od konkretnej implementacji bazy danych. W modelu fizycznym określa się typy danych, indeksy, klucze obce, ograniczenia, itp. Model fizyczny jest tworzony na podstawie modelu logicznego.
 ![Alt text](/src/img/bazy-danych/image-13.png)
@@ -84,6 +112,10 @@ Zapytania zaliczamy do jednej z czterech  kategorii:
 
 Instrukcje SQL w obrębie zapytań tradycyjnie zapisywane są wielkimi literami, jednak nie jest to wymóg. Każde zapytanie w SQL-u musi kończyć się znakiem średnika (;).
 ## 37. Funkcje w języku SQL.
+
+* Oracle
+  * https://drive.google.com/drive/folders/1_lTvQF-mQFe5d8FA3U_od7YRN-xQ_C7d
+  
 ## 38. Transakcje w bazach danych. 
 Transakcja w bazie danych — seria jednej lub więcej operacji wykonywanych jako pojedyncza, atomowa jednostka pracy (albo wszystkie operacje w transakcji zostaną zakończone sukcesem, albo żadna z nich nie zostanie zastosowana w bazie danych). Transakcje są wykorzystywane do zapewnienia spójności i integralności danych poprzez zapewnienie, że baza danych pozostaje spójna nawet w przypadku awarii systemu lub błędów. Są niezbędne do umożliwienia współbieżnego dostępu, zapewnienia atomowości,  odzyskiwania danych oraz zapewnienia właściwości ACID.
 
