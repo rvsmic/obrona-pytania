@@ -44,11 +44,11 @@ Związki pomiędzy encjami w modelu logicznym (CMD):
 * jeden do jednego (1:1) (związek wymagany z jednej
 strony)
   ![1:1](/src/img/bazy-danych/image-9.png)
-* jeden do wielu (1:N) (nie wymagany z żadnej strony)
+* jeden do wielu (1:N) (związek nie wymagany z żadnej strony)
   ![1:N](/src/img/bazy-danych/image-10.png)
-* wiele do jednego (N:1) (wymagany z jednej strony)
+* wiele do jednego (N:1) (związek wymagany z jednej strony)
   ![N:1](/src/img/bazy-danych/image-12.png)
-* wiele do wielu (N:M) (nie wymagany)
+* wiele do wielu (N:M) (związek nie wymagany)
   ![N:M](/src/img/bazy-danych/image-11.png)
 ### Model relacyjny
 Model relacyjny jest oparty na matematycznym pojęciu relacji, która jest reprezentowana
