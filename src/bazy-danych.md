@@ -120,8 +120,49 @@ Zapytania zaliczamy do jednej z czterech  kategorii:
 Instrukcje SQL w obrębie zapytań tradycyjnie zapisywane są wielkimi literami, jednak nie jest to wymóg. Każde zapytanie w SQL-u musi kończyć się znakiem średnika (;).
 ## 37. Funkcje w języku SQL.
 
-* Oracle
-  * https://drive.google.com/drive/folders/1_lTvQF-mQFe5d8FA3U_od7YRN-xQ_C7d
+* Oracle — https://drive.google.com/drive/folders/1_lTvQF-mQFe5d8FA3U_od7YRN-xQ_C7d
+  * funkcje numeryczne np.:
+    * ABS(n)
+    * CEIL(n)
+    * COS(n)
+    * EXP(n)
+    * LN(n)
+    * ROUND(n)
+    * SQRT(n)
+    * TRUNC(n [, m])
+  * funkcje znakowe zwracające wartości znakowe np.:
+    * CONCAT(s1, s2)
+    * INITCAP(s) — pierwsza litera wielka, pozostałe małe
+    * LOWER(s)
+    * LPAD(s, n [, c]) — dopełnienie z lewej strony
+    * REPLACE(s, s1, s2) — zamiana s1 na s2 w s
+    * RPAD(s, n [, c]) — dopełnienie z prawej strony
+    * SUBSTR(s, n [, m]) — podciąg od n do m
+  * funkcje znakowe zwracające wartości liczbowe
+    * ASCII(s) — kod ASCII pierwszego znaku s
+    * INSTR(s1, s2 [, n [, m]]) — pozycja podciągu s2 w s1 od n do m
+    * LENGTH(s)
+  * funkcje operujące na datach np.:
+    * ADD_MONTHS(data, n)
+    * EXTRACT(element FROM data)
+    * LAST_DAY(data) — ostatni dzień miesiąca daty
+    * MONTHS_BETWEEN(data1, data2) — LICZBA MIESIĘCY POMIĘDZY DATAMI
+    * NEXT_DAY(data, dzień tyg) — data następnego dnia tygodnia
+    * ROUND(data [, fmt]) — zaokrąglenie daty do jednostki określonej przez fmt
+    * SYSDATE
+    * TO_CHAR(data [, fmt[, nlsparams]])
+  * funkcje konwertujące
+    * TO_CHAR(n [, fmt])
+    * TO_DATE(s [, fmt])
+    * TO_NUMBER(s [, fmt])
+  * inne np.:
+    * COALESCE(e1, e2, ..., en) — zwraca pierwszy niepusty argument, gdy wszystkie są puste zwraca NULL
+    * DECODE(wyr, s1, r1, s2,r2,...[, domyślna])
+    * CASE WHEN war1 THEN r1 WHEN war2 THEN r2 ... [ELSE p] END
+    * GREATEST(e1, e2, ..., en)
+    * LEAST(e1, e2, ..., en)
+    * NVL(e1, e2) — zwraca e1, jeśli nie jest NULL, w przeciwnym razie zwraca e2
+    * NVL2(e1, e2, e3) — zwraca e2, jeśli e1 nie jest NULL, w przeciwnym razie zwraca e3
   
 ## 38. Transakcje w bazach danych. 
 Transakcja w bazie danych — seria jednej lub więcej operacji wykonywanych jako pojedyncza, atomowa jednostka pracy (albo wszystkie operacje w transakcji zostaną zakończone sukcesem, albo żadna z nich nie zostanie zastosowana w bazie danych). Transakcje są wykorzystywane do zapewnienia spójności i integralności danych poprzez zapewnienie, że baza danych pozostaje spójna nawet w przypadku awarii systemu lub błędów. Są niezbędne do umożliwienia współbieżnego dostępu, zapewnienia atomowości,  odzyskiwania danych oraz zapewnienia właściwości ACID.
