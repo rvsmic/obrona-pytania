@@ -152,8 +152,37 @@ Macierz jednostkowa:
   
         gdzie $M_{ij}$ jest minorem macierzy $A$ odpowiadającym elementowi $a_{ij}$ , tj. wyznacznikiem macierzy stopnia $n − 1$ powstaaej z macierzy $A$ w wyniku wykreślenia i-tego wiersza i j-tej kolumny.
 
-## 2.  Funkcje skrótu (mieszające) i ich zastosowania. 
-...
+## 2.  Funkcje skrótu (mieszające) i ich zastosowania.
+
+Funkcja skrótu, funkcja mieszająca lub funkcja haszująca – funkcja przyporządkowująca dowolnie dużej liczbie krótką wartość o stałym rozmiarze, tzw. skrót nieodwracalny.
+
+### Zastosowania
+
+* weryfikacja integralności/spójności danych
+* większość algorytmów podpisu cyfrowego działa na zasadzie wygenerowania skrótu wiadomości
+* do weryfikacji haseł
+* identyfikacja plików — systemy kontorli wersji takie jak Git czy Mercurial używają funkcji skrótu SHA do identyfikacji różnego rodzaju zawartości
+* do ustalenia krótkich i łatwych do weryfikacji sygnatur dla dowolnie dużych zbiorów danych. Sygnatury mogą:
+  * chronić przed przypadkowymi lub celowo wprowadzonymi modyfikacjami danych (sumy kontrolne),
+  * przy optymalizacji dostępu do struktur danych w programach komputerowych (tablice mieszające/z haszowaniem).
+
+### Kryteria kryptograficznej funkcji skrótu w zależności od zastosowania
+
+* odporność na kolizje — brak praktycznej możliwości wygenerowania dwóch dowolnych wiadomości o takim samym skrócie
+* odporność na kolizje konkretnych wiadomości pierwszego i drugiego rzedu — brak praktycznej możliwości wygenerowania wiadomości o takim samym skrócie jak wskazana wiadomość
+* jednokierunkowość —  brak możliwości wnioskowania o wiadomości wejściowej na podstawie wartości skrótu
+
+Dodatkowo w niektórych zastosowaniach wymagane:
+
+* pseudolosowość
+* uwierzytelnienia wiadomości
+* niemożności odróżnienia od losowej wyroczni – uczynienie niemożliwym do znalezienia dla przeciwnika dwóch wiadomości, dla których wartości funkcji skrótu nieznacznie się różnią
+
+### Przykładowe funkcjie i algorytmy
+
+* SHA
+* MD5
+  
 ## 3. Problemy rekurencyjne i ich rozwiązywanie. 
 ...
 ## 4. Podstawowe charakterystyki statystyki opisowej i matematycznej. 
