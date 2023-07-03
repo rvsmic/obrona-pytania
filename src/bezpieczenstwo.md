@@ -1,4 +1,4 @@
-# Bezpieczeństwo systemów informatycznych'
+# Bezpieczeństwo systemów informatycznych
 
 [`back to README.md`](../README.md)
 
@@ -35,7 +35,7 @@
 - **Oparty o protokół Diffiego-Hellmana** — klucz jest ustalany wspólnie przez dwie strony, które nie muszą się znać, na podstawie wybranych przez siebie publicznych parametrów (np. modulo liczby pierwszej) i na obliczeniach matematycznych (liczba pierwsza jest tajna, a operacja na niej nie). Prowadzi to do wygenerowania wspólnego klucza, który jest znany tylko tym dwóm stronom. Zaletą tego rozwiązania jest odporność na podsłuchiwanie
   
     ![Diffie-Hellman Key Exchange](https://upload.wikimedia.org/wikipedia/commons/a/a9/Diffie-Hellman_Key_Exchange.png)
-    
+
 - **Oparty o zaufaną stronę trzecią (TTP)** — zaufana trzecia strona to strona, która jest zaufana przez dwie strony, które chcą się wymieniać kluczami. Zaufana trzecia strona przechowuje klucz każdej ze stron, który został jej przekazany, np osobiście. Zostaje on udostępniony stronom komunikacji gdy kazda ze stron ufa 3 stronie. Wadą tego rozwiązania jest to, że zaufana trzecia strona musi być dostępna, aby dwie strony mogły się wymieniać kluczami. Zaufanie oznacza tutaj, że trzecia strona może reprezentować interesy danej strony. Model ten jest używany w PKI (Public Key Infrastructure), gdzie zaufana trzecia strona jest CA (Certificate Authority).
 
 Inne pojęcia:
