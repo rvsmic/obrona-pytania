@@ -14,7 +14,7 @@
 
 - **Authenticity** (autentyczność) — zapewnienie, że informacja jest autentyczna, czyli pochodzi od osoby, która jest jej rzeczywistym autorem. Dotyczy to zarówno komunikacji jak i operacji na danych. Chodzi o osoby, procesy, systemy czy instytucje.
 - **Accountability** (rozliczalność) — zapewnienie, że da się zweryfikować kto i kiedy wykonał daną operację na danych.
-- **Non-repudiation** (niezaprzeczalność) — zapewnienie, że osoba, która uczestniczyła w komunikacji nie może zaprzeczyć, że tego nie robiła. Jest to równiesz ochrona przed *fałszywym* zaprzeczeniem.
+- **Non-repudiation** (niezaprzeczalność) — zapewnienie, że osoba, która uczestniczyła w komunikacji nie może zaprzeczyć, że tego nie robiła. Jest to również ochrona przed *fałszywym* zaprzeczeniem.
 - **Reliability** (niezawodność) — zapewnienie, że system jest niezawodny, czyli taki który działa bezbłędnie.
 - **Identification** (identyfikacja) — możliwość rozróżnienia użytkowników, np po UID.
 - **Authentication** (uwierzytelnianie) — możliwość weryfikacji tożsamości użytkownika, najczęściej opiera się na:
@@ -36,7 +36,7 @@
   
     ![Diffie-Hellman Key Exchange](https://upload.wikimedia.org/wikipedia/commons/a/a9/Diffie-Hellman_Key_Exchange.png)
 
-- **Oparty o zaufaną stronę trzecią (TTP)** — zaufana trzecia strona to strona, która jest zaufana przez dwie strony, które chcą się wymieniać kluczami. Zaufana trzecia strona przechowuje klucz każdej ze stron, który został jej przekazany, np osobiście. Zostaje on udostępniony stronom komunikacji gdy kazda ze stron ufa 3 stronie. Wadą tego rozwiązania jest to, że zaufana trzecia strona musi być dostępna, aby dwie strony mogły się wymieniać kluczami. Zaufanie oznacza tutaj, że trzecia strona może reprezentować interesy danej strony. Model ten jest używany w PKI (Public Key Infrastructure), gdzie zaufana trzecia strona jest CA (Certificate Authority).
+- **Oparty o zaufaną stronę trzecią (TTP)** — zaufana trzecia strona to strona, która jest zaufana przez dwie strony, które chcą się wymieniać kluczami. Zaufana trzecia strona przechowuje klucz każdej ze stron, który został jej przekazany, np osobiście. Zostaje on udostępniony stronom komunikacji gdy każda ze stron ufa 3 stronie. Wadą tego rozwiązania jest to, że zaufana trzecia strona musi być dostępna, aby dwie strony mogły się wymieniać kluczami. Zaufanie oznacza tutaj, że trzecia strona może reprezentować interesy danej strony. Model ten jest używany w PKI (Public Key Infrastructure), gdzie zaufana trzecia strona jest CA (Certificate Authority).
 
 Inne pojęcia:
 
