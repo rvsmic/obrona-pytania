@@ -218,4 +218,46 @@ A(m-1,A(m,n-1)) & \quad \text{dla }m>0\ i\ n>0
 \end{cases}
 $$
 
-## 4. Podstawowe charakterystyki statystyki opisowej i matematycznej. 
+## 4. Podstawowe charakterystyki statystyki opisowej i matematycznej.
+
+### Statystyka opisowa
+
+Dział statystyki zajmujący się metodami opisu danych statystycznych uzyskanych podczas badania statystycznego. Celem stosowania metod statystyki opisowej jest podsumowanie zbioru danych i wyciągnięcie pewnych podstawowych wniosków i uogólnień na temat zbioru.
+
+#### Techniki stystyki opisowej
+
+* opis tabelaryczny — dane w postaci tabel, różnego rodzaju podsumowania np. szereg rozdzielny
+* graficzna reprezentacja wyników — np. w formie 
+  * histogram, wielobok liczebności i krzywa liczebności — na podstawie danych z szeregu rozdzielczego
+  * wykres Lorenza — koncentracja wartości cechu
+* wyznaczanie miar rozkładu
+  * miary położenie, np. kwantyl
+    * w tym miery tendencji centralnej
+      * średnia arytmetyczna
+      * średnia geometryczna
+      * średnia harmoniczna
+      * średnia kwadratowa — pozwala oszacować rząd wielkości serii danych liczbowych lub funkcji ciągłej, użyteczny zwłaszcza w przypadku, gdy wielkości różnią się znakiem
+      $$M2=\sqrt{\frac{a_1^2+\dots+a_n^2}{n}}$$
+      * mediana — wartość środkowa
+      * moda/dominanta — wskazuje na wartość o największym prawdopodobieństwie wystąpienia, lub wartość najczęściej występująca w próbie
+  * miary zróżnicowania
+    * odchylenie standardowe — miara zróżnicowania; jak szeroko watrości jakiejść wielkości rozrzucone wokół jej średniej; pierwiastek z wariancji
+    * wariancja — miara zmienności zmiennej losowej będąca kwadratem różnicy wartości zmiennej losowej X i jej wartości oczekiwanej; W statystyce opisowej obliczana jest jako średnia arytmetyczna kwadratów odchyleń (różnic) poszczególnych wartości cechy od średniej
+    * średnie odchylenie bezwzględne
+    * współczynnik zamienności
+  * miary asymertii
+    * współczynnik skośności
+    * współczynnik asymetrii
+  * miary koncentracji
+    * współczynnik Ginieg
+    * kurtoza
+
+### Statystyka matematyczna
+
+Dział statystyki, używający teorii prawdopodobieństwa i innych działów matematyki do rozwijania statystyki z czysto matematycznego punktu widzenia. Zajmuje się metodami wnioskowania statystycznego, które polegają na tym, że na podstawie wyników uzyskanych z próby formułujemy wnioski o całej zbiorowości (populacji).
+
+* Estymacja
+* Weryfikacja hipotez — sprawdzanie sądów o populacji przez badanie jej wycinka
+  * wnioskowanie częstościowe, z użyciem P-wartości 
+  * iloraz wiarygodności – służące do rozstrzygnięcia, w jakiej proporcji dane świadczą na rzecz dwóch porównywanych hipotez
+  * wnioskowanie bayesowskie, z użyciem czynnika Bayesa – służące do wyrażenia subiektywnej pewności, jaką można, na podstawie danych i wcześniejszych oczekiwań, przypisać danej hipotezie
