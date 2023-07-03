@@ -178,11 +178,44 @@ Dodatkowo w niektórych zastosowaniach wymagane:
 * uwierzytelnienia wiadomości
 * niemożności odróżnienia od losowej wyroczni – uczynienie niemożliwym do znalezienia dla przeciwnika dwóch wiadomości, dla których wartości funkcji skrótu nieznacznie się różnią
 
-### Przykładowe funkcjie i algorytmy
+### Przykładowe funkcje i algorytmy
 
 * SHA
 * MD5
   
-## 3. Problemy rekurencyjne i ich rozwiązywanie. 
-...
+## 3. Problemy rekurencyjne i ich rozwiązywanie.
+
+**Rekurencja, rekursja** — odwoływanie się funkcji lub definicji do samej siebie.
+
+**Rekurencja ogonowa** — rodzaj rekurencji, w której ostatnia operacja wykonywana przez funkcję to rekurencyjne wywołanie samej siebie lub zwrócenie końcowego wyniku
+
+### Przykłady
+
+* ciąg Fibonacciego
+$$
+F_n=
+\begin{cases}
+0 & \quad \text{dla  }n=0\\
+1 & \quad \text{dla  }n=1\\
+F_{n-2}+F_{n-1} & \quad \text{dla }n>1
+\end{cases}
+$$
+* definicja silni
+$$
+F_n=
+\begin{cases}
+1 & \quad \text{dla  }n=0\\
+nF_{n-1} & \quad \text{dla }n\geq1
+\end{cases}
+$$
+* funkcja Ackermanna
+$$
+A(m,n)=
+\begin{cases}
+n+1 & \quad \text{dla  }m=0\\
+A(m-1,1) & \quad \text{dla  }m>0\ i\ n=1\\
+A(m-1,A(m,n-1)) & \quad \text{dla }m>0\ i\ n>0
+\end{cases}
+$$
+
 ## 4. Podstawowe charakterystyki statystyki opisowej i matematycznej. 
