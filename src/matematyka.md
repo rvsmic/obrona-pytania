@@ -256,8 +256,17 @@ Dział statystyki zajmujący się metodami opisu danych statystycznych uzyskanyc
 
 Dział statystyki, używający teorii prawdopodobieństwa i innych działów matematyki do rozwijania statystyki z czysto matematycznego punktu widzenia. Zajmuje się metodami wnioskowania statystycznego, które polegają na tym, że na podstawie wyników uzyskanych z próby formułujemy wnioski o całej zbiorowości (populacji).
 
-* Estymacja
+* Estymacja — szacowanie parametrów rozkładu zmiennej losowej w populacji. Inaczej mówiąc w czasie estymacji dochodzi do określenia niektórych wartości dla całej badanej populacji na podstawie próby badawczej. Mogą to być odpowiednio średnia, wariancja, odchylenie standardowe czy liczba osób badanych – ich odsetek, procent czy częstość.
+  * parametryczna — szacowanie wartości parametrów rozkładu populacji generalnej
+    * estymacja punktowa — służąca do punktowego oszacowania wartości szukanego parametru rozkładu
+    * estymacja przedziałowa — określany jest przedział liczbowy, gdzie z danym prawdopodobieństwem zawiera się wartość szacowanego parametru.
+  * nieparametryczna — metody znajdowania postaci rozkładu populacji
 * Weryfikacja hipotez — sprawdzanie sądów o populacji przez badanie jej wycinka
   * wnioskowanie częstościowe, z użyciem P-wartości 
-  * iloraz wiarygodności – służące do rozstrzygnięcia, w jakiej proporcji dane świadczą na rzecz dwóch porównywanych hipotez
+    * P-wartość — narzędzie do podstawowej kontroli błędów; prawdopodobieństwo, że zależność jaką zaobserwowano w losowej próbie z populacji mogła wystąpić przypadkowo, wskutek losowej zmienności prób, choć w populacji wcale nie występuje
+  * iloraz wiarygodności – służące do rozstrzygnięcia, w jakiej proporcji dane świadczą na rzecz dwóch porównywanych hipotez; 
   * wnioskowanie bayesowskie, z użyciem czynnika Bayesa – służące do wyrażenia subiektywnej pewności, jaką można, na podstawie danych i wcześniejszych oczekiwań, przypisać danej hipotezie
+    * twierdzenie Bayesa opisuje zależność między prawdopodobieństwem warunkowym zdarzeń $A|B$ i $B|A$ 
+    $$P(H|E)=\frac{P(E|H)\cdot P(H)}{P(E)}$$ 
+    czyli prawdopodobieństwo hipotezy H w świetle danych E, odpowiada prawdopodobieństwu danych E przy założeniu hipotezy H, pomnożonemu przez dotychczasowe prawdopodobieństwo hipotezy H, i podzielonemu przez prawdopodobieństwo danych E.
+    Wnioskowanie bayesowskie korzysta z tego twierdzenia do aktualizowania prawdopodobieństwa subiektywnego hipotez w oparciu o dotychczasowe prawdopodobieństwo oraz nowe dane.
