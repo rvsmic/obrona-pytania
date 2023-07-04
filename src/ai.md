@@ -30,6 +30,8 @@ Metody maszynowego uczenia się
   * większość algorytmów uczenia przez wzmacnianie polega na przygotowaniu polityki, zebraniu za jej pomocą danych o środowisku do bufora, wytrenowaniu jej na ich podstawie i powtarzania tego procesu do osiągnięcia zamierzonego skutku
   ![uczenie przez wzmacnianie](/src/img/ai/reinf_learning.png)
   Schemat przedstawiający uczenie przez wzmacnianie. Agent zwraca akcje na podstawie obserwacji, środowisko zwraca obserwacje i nagrody na podstawie akcji, bufor kolekcjonuje akcje, obserwacje i nagrody, agent uczy się na podstawie danych w buforze.
+
+  Uczenie przez wzmacnianie najczęściej składa się z dwóch etapów: wstępnego zbierania danych oraz pętli uczenia. Pętla uczenia z kolei składa się ze zbierania danych oraz uczenia agenta na ich podstawie
   * elementy
     * agent —  element, który wchodzi w interakcję ze środowiskiem
     * środowisko — otoczenie, w którym agent się uczy (zadanie lub symulacja, z którym agent wchodzi w interakcję)
