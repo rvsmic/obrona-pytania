@@ -30,7 +30,20 @@ $10111_{(2)}=1\times 2^4+0\times 2^3+1\times 2^2+1\times 2^1+1\times 2^0=16+0+4+
 Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można przekonwertować z systemu o podstawie $n$ na system dziesiętny, a następnie z systemu dziesiętnego na system o podstawie $m$.
 
 ## 6. Sposoby cyfrowej reprezentacji liczby całkowitej i rzeczywistej.
-...
+
+### Liczby całkowite
+
+* kod uzupełnień do dwóch (w skrócie U2 lub ZU2) — obecnie najpopularniejszy sposób reprezentacji liczb całkowitych w systemach cyfrowych
+* w U2 na $n$ bitach można zapisać liczbę z zakresu $[-2^{n-1},2^{n-1}-1]$
+* liczba $-2^{n-1}$ nie ma liczby przeciwnej w $n$-bitowej reprezentacji kodu U2
+* gdy $a$ liczbą w U2 to $l_{(10)}=a_{n-1}*-2^{n-1}+\sum_{i=n-2}^0 a_i2^i$
+ ![Przykład U2](/src/img/podstawy/calkowita_ex.png)
+* zmiana liczby U2 na przeciwną
+  * inwersja bitów
+  * dodanie 1
+### Liczby rzeczywiste
+
+* w sposób zmiennopozycyjny
 ## 7. Typ, zmienna, obiekt i zarządzanie pamięcią.
 ...
 ## 8. Instrukcje sterujące przepływem programu. 
