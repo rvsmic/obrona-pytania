@@ -6,7 +6,7 @@
 
 ### UDP
 
-**UDP (User Datagram Protocol — *protokół pakietów użytkownika*)** — jeden z protokołów internetowych. Jest stosowanym **warstwie transportowej**. Jest to protokół bezpołączeniowy, więc nie ma narzutu na nawiązywanie połączenia i śledzenie sesji (w przeciwieństwie do TCP). Nie ma też mechanizmów kontroli przepływu i retransmisji.
+**UDP (User Datagram Protocol — *protokół pakietów użytkownika*)** — jeden z protokołów internetowych. Jest stosowany w **warstwie transportowej**. Jest to protokół bezpołączeniowy, więc nie ma narzutu na nawiązywanie połączenia i śledzenie sesji (w przeciwieństwie do TCP). Nie ma też mechanizmów kontroli przepływu i retransmisji.
 
 Jest dzięki temu prostszy i szybszy od TCP, ale mniej niezawodny.
 
@@ -94,7 +94,7 @@ Warstwy modelu OSI:
 3. **sieciowa** — określa sposób przesyłania pakietów między węzłami sieci. Używa adresów IP. Zapewnia trasowanie i adresowanie. Protokoły: IP, ICMP, ARP. Urządzeniem tej warstwy jest router.
 4. **transportowa** — zapewnia całościowe połączenie, składa dane w strumień. Używa portów. Zapewnia kontrolę przepływu i błędów. Protokoły: TCP, UDP.
 5. **sesji** — określa sposób nawiązywania, utrzymywania i zrywania sesji między aplikacjami. Synchronizuje różne aplikacje. Protokoły: NetBIOS, SAP, PPTP, SOCKS, L2TP, SSH, TLS, SSL, RPC, ASP, AFP, SCP, SIP, SDP, RTP, RTCP, XMPP, H.323.
-6. **prezentacji** — określa sposób reprezentacji danych, przetwarza dane do postaci kanonicznej (jak w dół). Odpowiada za kodowanie i konwersję danych. Obsługuje także rzeczy MPEG, JPG, GIF
+6. **prezentacji** — określa sposób reprezentacji danych, przetwarza dane do postaci kanonicznej (gdy przetwarza w dół stosu). Odpowiada za kodowanie i konwersję danych. Obsługuje także rzeczy MPEG, JPG, GIF
 7. **aplikacji** — zajmuje się specyfikacją interfejsu, który wykorzystują aplikacje do przesyłania danych do sieci.
 
 Warstwy 5-7 są warstwami **usługowymi**.
