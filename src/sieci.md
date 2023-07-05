@@ -15,6 +15,7 @@ Najczęściej stosowany jest do przesyłania danych w czasie rzeczywistym, np. w
 UDP wspiera również **multicast** (wysyłanie do wielu odbiorców jednocześnie).
 
 ### TCP
+
 **TCP (Transmission Control Protocol — *protokół kontroli transmisji*)** — jeden z protokołów internetowych. Jest stosowanym **warstwie transportowej**. Jest to protokół połączeniowy, więc wymaga nawiązania połączenia i śledzenia sesji (w przeciwieństwie do UDP). Ma też mechanizmy kontroli przepływu i retransmisji. Gwarantuje dostarczenie danych w kolejności, w jakiej zostały wysłane. Wszystkie dane muszą być dostarczone, a jeśli nie zostaną, to połączenie zostanie zerwane. Stosuje się tez sumy kontrolne (CRC) do sprawdzania poprawności danych i ich integralności. Stosuje się również potwierdzenia odbioru danych.
 
 Jest to protokół *klient-serwer*
@@ -100,7 +101,7 @@ Warstwy 5-7 są warstwami **usługowymi**.
 
 ### TCP/IP
 
-**TCP/IP** — model warstwowy, który opisuje komunikację w sieciach komputerowych. Składa się z 4 warstw, które są zorganizowane w stos. Każda warstwa odpowiada za inne zadania. Każda warstwa komunikuje się tylko z warstwami sąsiadującymi. Każda warstwa ma swoje własne protokoły. Model TCP/IP jest modelem praktycznym, który jest stosowany w praktyce.
+**TCP/IP** — model warstwowy, który opisuje komunikację w sieciach komputerowych. Składa się z 4 warstw, które są zorganizowane w stos. Każda warstwa odpowiada za inne zadania. Każda warstwa komunikuje się tylko z warstwami sąsiadującymi. Każda warstwa ma swoje własne protokoły. Model TCP/IP jest modelem praktycznym, który jest stosowany w praktyce. Każdy nowoczesny system operacyjny implementuje model TCP/IP.
 
 ![Model TCP/IP](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/UDP_encapsulation.svg/1280px-UDP_encapsulation.svg.png)
 
@@ -115,3 +116,10 @@ Warstwy 5-7 są warstwami **usługowymi**.
 
 ![Enkapsulacja](https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kapsu%C5%82kowanie_danych_wg_modelu_odniesienia_OSI.svg/1280px-Kapsu%C5%82kowanie_danych_wg_modelu_odniesienia_OSI.svg.png)
 
+1. **fizyczna** — bity/elektrony
+2. **łącza danych** — ramki/adresy MAC, np Ethernet
+3. **sieciowa** — pakiety/adresy IP
+4. **transportowa** — segmenty/datagramy/porty TCP/UDP
+5. **sesji** — dane
+6. **prezentacji** — dane
+7. **aplikacji** — dane
