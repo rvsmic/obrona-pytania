@@ -49,6 +49,9 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
 * Konwersja (np. 12.75 do 32 bitowej liczby zmiennoprzecinkowej (1 bit znaku, 8 bitów wykładnika, 23 bity mantysy))
   * konwersja części całkowitej liczby na system binarny (12 -> 1100)
   * konwersja części ułamkowej liczby na system binarny (0.75 -> 0.11)
+    * 0.75 * 2 = 1.5 -> 1
+    * 0.5 * 2 = 1.0 -> 1
+    * 0.25 * 2 = 0.5 -> 0, 0.5 * 2 = 1.0 -> 1 czyli 0.25 -> 0.01
   * złączenie części całkowitej i ułamkowej (1100.11)
   * przesunięcie przecinka tak aby było 1.XXX (1100.11 = 1.10011 * 2^3)
   * znak = 0 bo liczba dodatnia
