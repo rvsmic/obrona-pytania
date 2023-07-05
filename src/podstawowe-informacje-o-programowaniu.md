@@ -1,6 +1,8 @@
 # Podstawowe informacje o programowaniu
+
 [`back to README.md`](../README.md)
-## 5. Pozycyjne systemy liczbowe i konwersje pomiędzy nimi.
+
+## 5. Pozycyjne systemy liczbowe i konwersje pomiędzy nimi
 
 **Systemy pozycyjne** (systemy liczbowe) – metody zapisywania liczb  w taki sposób, że w zależności od pozycji danej cyfry w ciągu, oznacza ona wielokrotność potęgi pewnej liczby uznawanej za bazę danego systemu (np. $456_{(10)}=4\times 10^2+5\times 10^1 +5\times 10^0$).
 
@@ -17,7 +19,6 @@ $1$|$11/2$|$5\ r.\ 1$|$11$
 $2$|$5/2$|$2\ r.\ 1$|$111$
 $3$|$2/2$|$1\ r.\ 0$|$0111$
 $4$|$1/2$|$0\ r.\ 1$|$10111$
-
 
 ### Konwersja z systemu o podstawie $n$ na system dziesiętny
 
@@ -44,9 +45,17 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
 
 ### Liczby rzeczywiste
 
-* w sposób zmiennopozycyjny
+* Liczba zmiennoprzecinkowa – reprezentacja liczby rzeczywistej zapisanej za pomocą notacji naukowej.
+* Konwersja (np. 12.75 do 32 bitowej liczby zmiennoprzecinkowej (1 bit znaku, 8 bitów wykładnika, 23 bity mantysy))
+  * konwersja części całkowitej liczby na system binarny (12 -> 1100)
+  * konwersja części ułamkowej liczby na system binarny (0.75 -> 0.11)
+  * złączenie części całkowitej i ułamkowej (1100.11)
+  * przesunięcie przecinka tak aby było 1.XXX (1100.11 = 1.10011 * 2^3)
+  * znak = 0 bo liczba dodatnia
+  * wykładnik = 3 + 127 = 130 = 10000010 (wykładnik + 127 na binarny)
+  * mantysa = 10011000000000000000000 (przed przecinkiem zawsze 1 (pomija się) a reszta to część ułamkowa)
 
-## 7. Typ, zmienna, obiekt i zarządzanie pamięcią.
+## 7. Typ, zmienna, obiekt i zarządzanie pamięcią
 
 ### Typ
 
@@ -87,7 +96,7 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
 
 * stos (stack) — liniowa struktura danych, w której dane dokładane są na wierzch stosu i z wierzchołka stosu są pobierane (bufor typu LIFO Last In First Out). Stosowany jest przez procesory do chwilowego zapamiętywania rejestrów procesora, do przechowywania zmiennych lokalnych, a także w programowaniu wysokopoziomowym. W C++ przechowuje zmienne lokalne, argumenty wywołania funkcji, wartość zwracana przez funkcję i adres wywołania funkcji (miejsce w kodzie).
 
-## 8. Instrukcje sterujące przepływem programu. 
+## 8. Instrukcje sterujące przepływem programu
 
 **Instrukcja sterująca** — instrukcja zdefiniowana w składni określonego języka programowania, umożliwiająca wyznaczenie i zmianę kolejności wykonania instrukcji zawartych w kodzie źródłowym.
 
@@ -101,7 +110,6 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
   * instrukcja warunkowa, instrukcja wyboru
 * powtarzanie wykonania instrukcji
   * instrukcja pętli, instrukcja kontynuacji
-
 
 ### Rodzaje instrukcji sterujących
 
