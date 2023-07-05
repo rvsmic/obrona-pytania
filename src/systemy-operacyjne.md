@@ -1,7 +1,9 @@
 # Systemy operacyjne
 [`back to README.md`](../README.md)
 ## 23. Wielowarstwowa organizacja systemów komputerowych.
-## 24. System operacyjny – charakterystyka, zadania, klasyfikacja.
+
+## 24. System operacyjny – charakterystyka, zadania, klasyfikacja
+
 System operacyjny — program działający jako pośrednik między użytkownikiem a sprzętem komputerowym; zarządza zasobami systemu komputerowego; tworzy wygodne dla użytkownika środowisko do wykonywania programów.
 
 * Charakterystyka
@@ -50,7 +52,8 @@ System operacyjny — program działający jako pośrednik między użytkownikie
     * wbudowane — systemy operacyjne dla urządzeń wbudowanych
   * Zazwyczaj jako otwarte systemy operacyjne spotyka się systemy w pełni programowe, czasowo niedeterministyczne stosujące wywłaszczenie przy przełączaniu zadań. Wbudowane systemy operacyjne są najczęściej czasowo deterministyczne, zazwyczaj nie stosują wywłaszczenia zadań, bywa, że są realizowane również w sprzęcie.
 
-## 25. Procesy i wątki – charakterystyka i problemy.
+## 25. Procesy i wątki – charakterystyka i problemy
+
 * Proces — egzemplarz wykonywanego programu
   * każdy proces ma swój unikatowy numer (PID)
   * aby współbieżnie wykonać pewne fragmenty programu program może utworzyć określoną ilość wątków
@@ -99,9 +102,8 @@ System operacyjny — program działający jako pośrednik między użytkownikie
 * Problemy
   * wątki wykonywane równocześnie współdzielą pamięć adresową — równoczesny dostęp do wspólnych danych może powodować utratę spójności danych i w konsekwencji błędne działanie programu — do zapobiegania temu służą mechanizmy synchronizacji ( semafory, muteksy, sekcje krytyczne)
 
+## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym
 
-
-## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym.
 Pamięć operacyjna — kluczowy zasób systemu komputerowego dla wykonywania programów. Zarządzanie pamięcią jest jednak dość skomplikowane, ponieważ
 jej poszczególne części są w tym samym czasie wykorzystywane przez wiele procesów oraz
 przez jądro systemu operacyjnego.
@@ -111,22 +113,22 @@ przydział pamięci i jej odzyskiwanie, ochronę, udostępnianie w celu współd
 transformację adresów oraz transfer danych. Zadania te podzielone są między układy
 sprzętowe na poziomie architektury komputera, a system operacyjny.
 
-
 ### Pamięć wirtualna
-Technika programowa i sprzętową pozwawalająca na sztuczne zwiększenie pamięci RAM. 
+
+Technika programowa i sprzętową pozwawalająca na sztuczne zwiększenie pamięci RAM.
 
 Pamięć wirtualna gospodaruje pamięcią operacujną RAM, pozwalając na przydzielenie pamięci dla wielu procesów, zwalnianie jej i powtórne przydzielanie, w ilości większej niż rzeczywista ilość pamięci fizycznej zainstalowanej w komputerze poprzez przeniesienie danych z ostatnio nie używanej pamięci do pamięci masowej (np. twardego dysku); w sytuacji gdy procesor odwołuje się do danych z pamięci przeniesionej na dysk przesuwa się te dane do pamięci w wolne miejsce, a gdy brak wolnej pamięci - zwalnia się ją przez wyżej opisane przerzucenie jej na dysk.
 
-
 ### Sposoby zarządzania pamięcią operacyjną w systemie
 
-#### Segmentacja 
+#### Segmentacja
 
 Jedna z metod ochrony pamięci, używana przy wielozadaniowości. Każdy proces otrzymuje swój własny obszar pamięci, realizowany poprzez rejestry segmentowe.
 
 Segmentacja pamięci polega na podzieleniu przez procesor pamięci fizycznej na ciągłe
 bloki nazywane segmentami, które opisane są przez deskryptory (8 bajtowy rekord).
-![Alt text](image.png)
+![deskryptor](/src/img/systemy_operacyjne/deskryptor.png)
+
 * B — adres bazowy segmentu, czyli fizyczny adres początku segmentu w pamięci operacyjnej,
 * L — długość segmentu,
 * G — sposób interpretacji limitu segmentu (0 — w bajtach, 1 — w 4KB stronach),
@@ -135,27 +137,30 @@ bloki nazywane segmentami, które opisane są przez deskryptory (8 bajtowy rekor
 * AV — nie używany,
 * A — mówi czy deskryptor jest używany.
 
-Deskryptory segmentów przechowywane są w tablicy deskryptorów segmentów 
+Deskryptory segmentów przechowywane są w tablicy deskryptorów segmentów
+
 * globalnej — GDT (Global Descriptor Table) — jest tylko jedna, opisuje segmenty widoczne dla wszystkich procesów
 * lokalnej — LDT (Local Descriptor Table) — jest ich wiele, opisują preywatne segmenty procesów.
 
-![Alt text](image-1.png)
+![Mechanizm segmanetacji](/src/img/systemy_operacyjne/mech_segm.png)
 
-Adres logiczny składa się selektora segmentu SE i przesunięcia D. 
-* Funkcje selektora segmentu pełni jeden z rejestrów segmentowych: 
-  * dla kodu rejestr CS, 
-  * dla danych  resejst DS, ES, 
+Adres logiczny składa się selektora segmentu SE i przesunięcia D.
+
+* Funkcje selektora segmentu pełni jeden z rejestrów segmentowych:
+  * dla kodu rejestr CS,
+  * dla danych  resejst DS, ES,
   * dla stosu SS.
-* Selektor zawiera: 
+* Selektor zawiera:
   * indeks deskryptora — położenie segmentu znajdującego się w tablicy deskryptorów,
   * TI — określa o którą tablicę chodzi (0 — GDT, 1 — LDT)
   * RPL - żądany poziom uprzywilejowania – określa poziom uprzywilejowania procesu
-![Alt text](image-2.png)
+![Selektor segmentu](/src/img/systemy_operacyjne/selektor.png)
 
 * Adres liniowy — suma pobieranego z pola adresowego rozkazu przesunięcia D i adresu początku segmentu B pobieranego z deskryptora. Adres liniowy może być poddany przetwarzaniu przez mechanizm stronicowania.
 * Komparator sprawdza czy przesunięcie D nie wykracza poza długość segmentu L zapisanego w deskryptorze. Gdy tak się zdarzy generowany jest wyjątek EXC który powoduje wywołanie systemu operacyjnego. System operacyjny podejmuje decyzję, co zrobić z naruszającym przydzielony segment procesem.
 
 ##### Zalety i wady segmentacji
+
 * Zalety:
   * Skuteczna, prosta relokacja kodu i danych – nieważne jest, gdzie w pamięci fizycznej znajduje się segment, program może odwoływać się do kolejnych słów pamięci w ramach segmentu, licząc od zera do końca segmentuość implementacji,
   * dobra ochrona — ze względu na strukturę ligicznej przestrzeni adresowej,
@@ -176,6 +181,7 @@ procesu w pamięci fizycznej. Jest to podział pamięci na mniejsze obszary o us
 zmiennej wielkości i przydzielanie tym blokom adresów fizycznych lub logicznych.
 
 Cechy:
+
 * pamięć fizyczna dzielona jest na bloki o jednakowej wielkości zwane ramkami (frame),
 * pamięć fizyczna dzielona jest na bloki o jednakowej wielkości zwane stronami,
 * rozmiary stron i ramek równe,
@@ -183,18 +189,30 @@ Cechy:
 
 W celu odróżnienia stron z obrazem procesu od stron pamięci fizycznej, strony fizyczne nazywa się ramkami (ang. frames). Pamięć procesu tworzą kolejne strony, natomiast ramki mogą być porozrzucane gdziekolwiek w pamięci. Ich fizyczna lokalizacja zawarta jest w tablicy stron.
 
-![Alt text](image-3.png)
+![Schemat stronnicowania](/src/img/systemy_operacyjne/stronnicowanie.png)
 
 ##### Tablica stron
+
 Składa się z 32 bitowych słów, każde opisuje pojedynczą stronę.
 Opis strony zawiera:
+
 * adres fizyczny strony,
 * atrubuty strony: bit obecności, dostępu, możliwość zapisu, przywileje zapisu, czy był zapis
-![Alt text](image-4.png)
+![Zawartość deskryptora strony](/src/img/systemy_operacyjne/deskryp_strony.png)
 
 W architekturze IA-32 dwa schematy stronnicowania:
+
 * jednopoziomowe (strona ma 4MB)
 * wielopoziomowe (strona ma 4KB)
+
 #### Segmentacja ze stronicowaniem
+
+Segmentacja ze stronicowaniem — połączenie technik segmentacji
+i stronicowania.
+
+* Z punktu widzenia procesu, pamięć logiczna składa się z szeregu segmentów, które są rozmieszczone w pamięci fizycznej w spójny sposób. Są one dzielone na strony i każda strona może być pamiętana w dowolnej ramce. Tak więc adres logiczny składa się z numeru segmentu i adresu w obrębie segmentu. Na podstawie numeru segmentu można wyznaczyć tablicę stron określającą rozmieszczenie stron tworzących segment.
+* Podobnie jak w przypadku stronicowania, możemy mieć do czynienia ze stronicowaniem wielopoziomowym, jak również z podręczną tablicą stron
+* Dzięki połączeniu technik segmentacji i stronicowania
+  * można przydzielać procesom wiele segmentów, czy współdzielić segmenty unikająć fragmentacji zewnętrznej.
 
 ## 27. Organizacja systemu plików i pamięci zewnętrznej. 
