@@ -41,11 +41,52 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
 * zmiana liczby U2 na przeciwną
   * inwersja bitów
   * dodanie 1
+
 ### Liczby rzeczywiste
 
 * w sposób zmiennopozycyjny
+
 ## 7. Typ, zmienna, obiekt i zarządzanie pamięcią.
-...
+
+### Typ
+
+**Typ** — definiuje jakie wartości może przyjmować zmienna, jaki rozmiar danych może być przechowywany.
+
+* typ całkowity — np. `int` (4 bajty), `long long` (8 bajtów), `short` (2 bajty) w c++
+* typ zmiennoprzecinkowy — np. `float` (4 bajty), `double` (8 bajtów) w c++
+* typ znakowy — np. `char` (1 bajt) w c++
+* typ tekstowy — np. `string`, `char *` w c++
+* typ logiczny — np. `bool` (1 bajt) w c++
+* typ wyliczeniowy — np. `enum` w c++
+* typ złożony — np.
+  * typ strukturalny — np. `struct` w c++
+  * typ obiektowy (klasa) — `class` w c++
+* typ pusty — np. `void` w c++ ?
+* typ wskaźnikowy — np. `int *` w c++
+* typ tablicowy — np. `int []` w c++
+* typ referencyjny — np. `int &` w c++
+
+### Zmienna
+
+**Zmienna** — nazwany obszar pamięci komputera, który przechowuje wartość określonego typu.
+
+* zmienna globalna — zmienna zdefiniowana w obrębie całego programu
+* zmienna lokalna — zmienna zdefiniowana w obrębie bloku
+* zmienna stała — zmienna, której wartość nie może być zmieniona po zainicjowaniu
+
+### Obiekt
+
+**Obiekt** — zmienna, która jest instancją klasy. Jest strukturą danych, która zawiera w sobie dane oraz metody, które mogą być wywoływane na tych danych.
+
+### Zarządzanie pamięcią
+
+**Zarządzanie pamięcią** — głównym zadaniem jest dostarczenie możliwości dynamicznego alokowania i zwalniania pamięci komputera.
+
+* dynamiczna alokacja pamięci — na żądanie alokacji, znajdowany jest blok nieużywanej pamięci o określonym rozmiarze. Pamięć pochodzi z dużej puli pamięci zwanej stertą. W procesie alokacji pojawia się problem fragmentacji pamięci związany z występowaniem wielu małych bloków nieużywanej pamięci pomiędzy blokami zajętymi. Występuje wtedy scalenie wolnych bloków pamięci zwane  kompaktyfikacją lub upakowaniem
+* sterta (kopiec, stóg, heap) — obszar pamięci implementujący strukturę danych o tej samej nazwie. Jest to obszar pamięci, z którego alokowane są dynamicznie obiekty. W języku C++ alokacja pamięci odbywa się za pomocą operatora `new`, a zwalnianie za pomocą operatora `delete`
+
+* stos (stack) — liniowa struktura danych, w której dane dokładane są na wierzch stosu i z wierzchołka stosu są pobierane (bufor typu LIFO Last In First Out). Stosowany jest przez procesory do chwilowego zapamiętywania rejestrów procesora, do przechowywania zmiennych lokalnych, a także w programowaniu wysokopoziomowym. W C++ przechowuje zmienne lokalne, argumenty wywołania funkcji, wartość zwracana przez funkcję i adres wywołania funkcji (miejsce w kodzie).
+
 ## 8. Instrukcje sterujące przepływem programu. 
 
 **Instrukcja sterująca** — instrukcja zdefiniowana w składni określonego języka programowania, umożliwiająca wyznaczenie i zmianę kolejności wykonania instrukcji zawartych w kodzie źródłowym.
