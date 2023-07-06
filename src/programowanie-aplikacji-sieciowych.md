@@ -71,4 +71,57 @@ Termin gniazdo jest również używany w odniesieniu do punktu końcowego oprogr
 
 ## 61. Pocztowe protokoły warstwy aplikacji
 
+### SMTP, SMTPS i ESMTP
+
+**SMTP** (Simple Mail Transfer Protocol) —  protokół komunikacyjny opisujący sposób przekazywania poczty elektronicznej w Internecie. Używa portu 25.
+
+* protokół tekstowy
+* określa się co najmniej jednego odbiorcę wiadomości (w większości przypadków weryfikowane jest jego istnienie), a następnie przekazuje treść wiadomości
+* brak mechanizmu weryfikacji nadawcy — ułatwia rozpowszechnianie spamu i wirusów komputerowych
+  * stworzono rozszerzenie SMTP-AUTH — klient może zalogować się przy użyciu dowolnej metody uwierzytelniania obsługiwanej przez serwer; używany głównie przez serwery przesyłania, gdzie uwierzytelnianie jest obowiązkowe
+  * nadawca może "udawać" serwer
+* stworzony był w oparciu o czysty tekst ASCII — nie radził sobie dobrze z plikami binarnymi, aby je kodować stworzono np. standard MIME (Multipurpose Internet Mail Extensions, dwuczęściowy identyfikator formatu plików i formatu treści przesyłanych w Internecie)
+* ESMTP (Extended Simple Mail Transfer Protocol) jest rozszerzeniem protokołu SMTP
+  * ustanowił ogólną strukturę dla wszystkich istniejących i przyszłych rozszerzeń, których celem było dodanie funkcji, których brakowało w oryginalnym SMTP
+  * definiuje spójne i łatwe w zarządzaniu środki, za pomocą których można identyfikować klientów i serwery ESMTP, a serwery mogą wskazywać obsługiwane rozszerzenia
+  * użytkownicy mogą ręcznie określić z góry maksymalny rozmiar akceptowany przez serwery ESMTP
+  * ma maksymalny rozmiar wiadomości, który może być przesłany
+  * 
+### POP3
+
+**Post Office Protocol** (POP) — protokół internetowy z warstwy aplikacji pozwalający na odbiór poczty elektronicznej ze zdalnego serwera do lokalnego komputera poprzez połączenie TCP/IP. Używa portu 110 (z SSL portu 995).
+
+Wcześniejsze wersje POP, POP2 zastąpione całkowicie przez POP3.
+
+**POP3**:
+
+* umożliwia jedynie pobieranie i kasowanie poczty
+* po połączeniu z siecią, użytkownik może pobrać pocztę z serwera na swój komputer za pomocą protokołu POP3
+* połączenie realizowane tylko gdu użytkownik pobiera pocztę, nie może zostać uśpione
+* każdy list musi być pobierany razem z załącznikami i żadnej jego części nie można w łatwy sposób pominąć (komenda `top` pozwala określić przesyłaną liczbę linii od początku wiadomości)
+* wszystkie maile do jednej skrzynki — nie da się utworzyć kilku
+* serwer POP3 nie potrafi sam przeszukiwać czekających w kolejce wiadomości
+* komunikacja może być zaszyfrowana SSL
+* hasło przesyłane otwartym tekstem, o ile nie korzysta się z opcjonalnej komendy protokołu POP3, APOP
+* protokół tekstowy
+* komunikacja za pomocą czteroliterowych poleceń
+
+### IMAP
+
+**IMAP** (ang. Internet Message Access Protocol) – internetowy protokół pocztowy zaprojektowany jako następca POP3. Protokół TCP oraz port 143.
+
+**IMAP**:
+
+* umożliwia zarządzanie wieloma folderami pocztowymi
+* umożliwia pobieranie i operowanie na listach znajdujących się na zdalnym serwerze
+* pozwalają na pobieranie nagłówków wiadomości bez pobierania całej treści
+* pozwala na dwa tryby działania: połączeniowy i bezpołączeniowy
+* klient często utrzymuje połączenie dopóki interfejs użytkownika uruchomiony
+* umożliwia połączenie wielu klientów naraz
+* wiadomości mogą być wysyłane bezpośrednio do użytkownika bez konieczności odpytywania serwera
+* w protokole IMAP fragmenty wiadomości elektronicznej są opisane za pomocą standardu MIME 
+* system flag określających status wiadomości (flagi zapisywane na serwerze)
+* niektóre serwery IMAP pozwalają na tagowanie wiadomości
+* przeszukiwanie skrzynki pocztowej po stronie serwera — nie ma konieczności pobrania wszystkich wiadomości
+
 ## 62. Porównanie HTTP i WebSocket
