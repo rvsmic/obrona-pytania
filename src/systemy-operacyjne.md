@@ -68,7 +68,7 @@ System operacyjny — program działający jako pośrednik między użytkownikie
 * Klasyfikacja
   * pod względem komunikacji z użytkownikiem
     * tekstowe — pierwsze wersje DOSu, Unix
-    * graficzne 
+    * graficzne
   * pod względem architektury
     * monolityczne — jednozadaniowe systemy posiadające najprostszą strukturę
     * warstwowe — osiadające hierarchiczną strukturę poleceń systemowych, możliwa wielozadaniowość
@@ -92,7 +92,25 @@ System operacyjny — program działający jako pośrednik między użytkownikie
     * wbudowane — systemy operacyjne dla urządzeń wbudowanych
   * Zazwyczaj jako otwarte systemy operacyjne spotyka się systemy w pełni programowe, czasowo niedeterministyczne stosujące wywłaszczenie przy przełączaniu zadań. Wbudowane systemy operacyjne są najczęściej czasowo deterministyczne, zazwyczaj nie stosują wywłaszczenia zadań, bywa, że są realizowane również w sprzęcie.
 
-## 25. Procesy i wątki – charakterystyka i problemy.
+#### Semafory
+
+**Semafory** — mechanizm synchronizacji procesów, który umożliwia procesom komunikację i synchronizację w celu uniknięcia konfliktów w dostępie do zasobów; obiekt systemu operacyjnego służącym do kontrolowania dostępu do ograniczonego zasobu
+
+* nienazwane
+  * do synchronizacji wątków w obrębie jednego procesu
+  * dostęp następuje przez jego adres
+  * może być użyty do synchronizacji procesów jeśli jest umieszczony w pamięci dzielonej
+* nazwane
+  * dostęp przez nazwę
+  * lepszy do synchronizacji procesów niż wątków
+  * wolniejszy od nienazwanych
+
+Semafor jest zmienną całkowitą, przyjmuje wartości nieujemne (≥0) lub — w przypadku semaforów binarnych — logiczne. Zmienna semaforowa musi mieć nadaną początkową wartość (nieujemną)
+
+Po nadaniu wartości semafora, proces może go zająć (zdejmując wartość 1) lub zwolnić (dodając wartość 1). Jeśli wartość semafora jest równa 0, proces czeka na zwolnienie semafora przez inny proces.
+
+## 25. Procesy i wątki – charakterystyka i problemy
+
 * Proces — egzemplarz wykonywanego programu
   * każdy proces ma swój unikatowy numer (PID)
   * aby współbieżnie wykonać pewne fragmenty programu program może utworzyć określoną ilość wątków
@@ -141,11 +159,119 @@ System operacyjny — program działający jako pośrednik między użytkownikie
 * Problemy
   * wątki wykonywane równocześnie współdzielą pamięć adresową — równoczesny dostęp do wspólnych danych może powodować utratę spójności danych i w konsekwencji błędne działanie programu — do zapobiegania temu służą mechanizmy synchronizacji ( semafory, muteksy, sekcje krytyczne)
 
+## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym
 
+Pamięć operacyjna — kluczowy zasób systemu komputerowego dla wykonywania programów. Zarządzanie pamięcią jest jednak dość skomplikowane, ponieważ
+jej poszczególne części są w tym samym czasie wykorzystywane przez wiele procesów oraz
+przez jądro systemu operacyjnego.
 
-## 26. Zarządzanie pamięcią operacyjną w systemie operacyjnym.
-<!-- 
-Pamięć operacyjna — pamięć komputerowa adresowana i dostępna bezpośrednio przez procesor, a nie za pośrednictwem urządzeń wejścia-wyjścia. Większość procesorów wymaga by w pamięci operacyjnej były umieszczone rozkazy procesora (program) dostępne bezpośrednio dla jego jednostek wykonawczych, stąd pamięć operacyjna jest każdą pamięcią, która może być zmapowana w przestrzeń adresową procesora. -->
+Podstawowe zadania, realizowane w ramach zarządzania pamięcią operacyjną obejmują
+przydział pamięci i jej odzyskiwanie, ochronę, udostępnianie w celu współdzielenia,
+transformację adresów oraz transfer danych. Zadania te podzielone są między układy
+sprzętowe na poziomie architektury komputera, a system operacyjny.
+
+### Pamięć wirtualna
+
+Technika programowa i sprzętową pozwawalająca na sztuczne zwiększenie pamięci RAM.
+
+Pamięć wirtualna gospodaruje pamięcią operacujną RAM, pozwalając na przydzielenie pamięci dla wielu procesów, zwalnianie jej i powtórne przydzielanie, w ilości większej niż rzeczywista ilość pamięci fizycznej zainstalowanej w komputerze poprzez przeniesienie danych z ostatnio nie używanej pamięci do pamięci masowej (np. twardego dysku); w sytuacji gdy procesor odwołuje się do danych z pamięci przeniesionej na dysk przesuwa się te dane do pamięci w wolne miejsce, a gdy brak wolnej pamięci - zwalnia się ją przez wyżej opisane przerzucenie jej na dysk.
+
+### Sposoby zarządzania pamięcią operacyjną w systemie
+
+#### Segmentacja
+
+Jedna z metod ochrony pamięci, używana przy wielozadaniowości. Każdy proces otrzymuje swój własny obszar pamięci, realizowany poprzez rejestry segmentowe.
+
+Segmentacja pamięci polega na podzieleniu przez procesor pamięci fizycznej na ciągłe
+bloki nazywane segmentami, które opisane są przez deskryptory (8 bajtowy rekord).
+![deskryptor](/src/img/systemy_operacyjne/deskryptor.png)
+
+* B — adres bazowy segmentu, czyli fizyczny adres początku segmentu w pamięci operacyjnej,
+* L — długość segmentu,
+* G — sposób interpretacji limitu segmentu (0 — w bajtach, 1 — w 4KB stronach),
+* DPL — poziom uprzywilejowania (0 — najwyższy, 3 — najniższy),
+* P — bit obecności (używany w pamięci wirtualnej),
+* AV — nie używany,
+* A — mówi czy deskryptor jest używany.
+
+Deskryptory segmentów przechowywane są w tablicy deskryptorów segmentów
+
+* globalnej — GDT (Global Descriptor Table) — jest tylko jedna, opisuje segmenty widoczne dla wszystkich procesów
+* lokalnej — LDT (Local Descriptor Table) — jest ich wiele, opisują preywatne segmenty procesów.
+
+![Mechanizm segmanetacji](/src/img/systemy_operacyjne/mech_segm.png)
+
+Adres logiczny składa się selektora segmentu SE i przesunięcia D.
+
+* Funkcje selektora segmentu pełni jeden z rejestrów segmentowych:
+  * dla kodu rejestr CS,
+  * dla danych  resejst DS, ES,
+  * dla stosu SS.
+* Selektor zawiera:
+  * indeks deskryptora — położenie segmentu znajdującego się w tablicy deskryptorów,
+  * TI — określa o którą tablicę chodzi (0 — GDT, 1 — LDT)
+  * RPL - żądany poziom uprzywilejowania – określa poziom uprzywilejowania procesu
+![Selektor segmentu](/src/img/systemy_operacyjne/selektor.png)
+
+* Adres liniowy — suma pobieranego z pola adresowego rozkazu przesunięcia D i adresu początku segmentu B pobieranego z deskryptora. Adres liniowy może być poddany przetwarzaniu przez mechanizm stronicowania.
+* Komparator sprawdza czy przesunięcie D nie wykracza poza długość segmentu L zapisanego w deskryptorze. Gdy tak się zdarzy generowany jest wyjątek EXC który powoduje wywołanie systemu operacyjnego. System operacyjny podejmuje decyzję, co zrobić z naruszającym przydzielony segment procesem.
+
+##### Zalety i wady segmentacji
+
+* Zalety:
+  * Skuteczna, prosta relokacja kodu i danych – nieważne jest, gdzie w pamięci fizycznej znajduje się segment, program może odwoływać się do kolejnych słów pamięci w ramach segmentu, licząc od zera do końca segmentuość implementacji,
+  * dobra ochrona — ze względu na strukturę ligicznej przestrzeni adresowej,
+  * łatwe współdzielenie kodu i danych,
+  * brak wewnętrzej fragmentacji, 
+  * wyższy stopień wieloprogramowości.
+* Wady
+  * komplikacja modelu programowego (dwuelementowy adres),
+  * problematyczna i niewydajna dynamiczna alokacja,
+  * praktycznie nierealizowalna pamięć wirtualna,
+  * duże ograniczenia rozmiarów segmentów – zmuszało to do dzielenia kodu programów oraz bloków danych w sposób nienaturalny, utrudniając tworzenie wielkich struktur danych (te ograniczenie zostało później zniesione, ale dzielenie programu na logiczne części jest dalej skomplikowane)
+  
+#### Stronicowanie
+
+Jeden ze sposobów rozwiązania problemu zewnętrznej fragmentacji,
+polegający na dopuszczeniu nieciągłości rozmieszczenia logicznej przestrzeni adresowej
+procesu w pamięci fizycznej. Jest to podział pamięci na mniejsze obszary o ustalonej lub
+zmiennej wielkości i przydzielanie tym blokom adresów fizycznych lub logicznych.
+
+Cechy:
+
+* pamięć fizyczna dzielona jest na bloki o jednakowej wielkości zwane ramkami (frame),
+* pamięć fizyczna dzielona jest na bloki o jednakowej wielkości zwane stronami,
+* rozmiary stron i ramek równe,
+* przy wykonywaniu procesu, strony z pamięci pomocniczej wprowadzane są w odpowiednie ramki pamięci operacyjnej.
+
+W celu odróżnienia stron z obrazem procesu od stron pamięci fizycznej, strony fizyczne nazywa się ramkami (ang. frames). Pamięć procesu tworzą kolejne strony, natomiast ramki mogą być porozrzucane gdziekolwiek w pamięci. Ich fizyczna lokalizacja zawarta jest w tablicy stron.
+
+![Schemat stronnicowania](/src/img/systemy_operacyjne/stronnicowanie.png)
+
+##### Tablica stron
+
+Składa się z 32 bitowych słów, każde opisuje pojedynczą stronę.
+Opis strony zawiera:
+
+* adres fizyczny strony,
+* atrubuty strony: bit obecności, dostępu, możliwość zapisu, przywileje zapisu, czy był zapis
+![Zawartość deskryptora strony](/src/img/systemy_operacyjne/deskryp_strony.png)
+
+W architekturze IA-32 dwa schematy stronnicowania:
+
+* jednopoziomowe (strona ma 4MB)
+* wielopoziomowe (strona ma 4KB)
+
+#### Segmentacja ze stronicowaniem
+
+Segmentacja ze stronicowaniem — połączenie technik segmentacji
+i stronicowania.
+
+* Z punktu widzenia procesu, pamięć logiczna składa się z szeregu segmentów, które są rozmieszczone w pamięci fizycznej w spójny sposób. Są one dzielone na strony i każda strona może być pamiętana w dowolnej ramce. Tak więc adres logiczny składa się z numeru segmentu i adresu w obrębie segmentu. Na podstawie numeru segmentu można wyznaczyć tablicę stron określającą rozmieszczenie stron tworzących segment.
+* Podobnie jak w przypadku stronicowania, możemy mieć do czynienia ze stronicowaniem wielopoziomowym, jak również z podręczną tablicą stron
+* Dzięki połączeniu technik segmentacji i stronicowania
+  * można przydzielać procesom wiele segmentów, czy współdzielić segmenty unikająć fragmentacji zewnętrznej.
+
 
 ## 27. Organizacja systemu plików i pamięci zewnętrznej. 
 
