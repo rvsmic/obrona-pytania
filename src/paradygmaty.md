@@ -219,3 +219,16 @@ Dwa podejścia:
   * obsługa błędów
 
 ## 53. Deklaratywne programowanie w logice: klauzule Horne'a, nawracanie
+
+### Klauzule Horne'a
+
+**klauzula Horne'a** — wyrażenie logiczne, w którym co najwyżej jeden człon nie jest zanegowany
+
+Ogólna postać klauzuli Horna: $\overline{p_1}\lor\overline{p_2}\lor\overline{p_3}\lor q$, co można przeprowadzić do postaci równoważnej $(\overline{p_1}\lor\overline{p_2}\lor\overline{p_3}\lor q) \iff (\overline{p_1}\land\overline{p_2}\land\overline{p_3} \Rightarrow q)$.
+
+W prologu klauzule Horne'a są zapisywane w postaci:
+`q:-p1,p2,p3.` co znaczy 'q jest prawdziwe, jeśli p1, p2 i p3 są prawdziwe'.
+
+### Nawracanie
+
+**Nawracanie** (backtracing) — — cofnięcie się i przyjęcie innej strategii uzgadniania rozwiązanie problemu. Zdarza się, że cel może zostać spełniony na więcej niż jeden sposób. Gdy zachodzi konieczność wybrania jednej z wielu możliwości, Prolog wybiera pierwszą z nich (w kolejności występowania w pliku) i zapamiętuje miejsce, w którym wybór ten został dokonany. Jeśli w jakimś momencie nie powiedzie się próba obliczenia celu, system ma możliwość powrócenia do miejsca ostatnio dokonanego wyboru i zastąpienia go wyborem alternatywnym. Ten sam mechanizm działa też, gdy cel zostanie obliczony, pozwala wtedy znaleźć alternatywne rozwiązania.
