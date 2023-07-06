@@ -86,6 +86,27 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
 * zmienna lokalna — zmienna zdefiniowana w obrębie bloku
 * zmienna stała — zmienna, której wartość nie może być zmieniona po zainicjowaniu
 
+Zmienne charakteryzowane przez 6 atrybutów:
+
+* nazwa
+* adres — adres komórki przechowującej początek wartości zmiennej
+* wartość — dane, zawartość komórek pamięci przypisanych do zmiennej
+* typ
+  * wiązanie typu polega na przypisaniu zmiennej typu
+    * jawnie — deklaracja programisty
+    * niejawnie – poprzez konwencję użytej nazwy, domyślne zachowanie kompilatora
+    * wnioskując z kontekstu — statycznie lub dynamicznie
+      * statycznie — typ zmiennych ustalanych podczas kompilacji, nie może się zmienić
+      * dynamicznie — typ zmiennych ustalany podczas wykonania programu, może się zmienić, w praktyce programu nie da się skompilować i trzeba go interpretować
+  * typowanie silnie nie pozwala na mieszanie typów w wyrażeniach
+  * typowanie słabe pozwala na mieszanie typów w wyrażeniach i proponuje jakiś wynik
+* okres życia — czas między alokacją a dealokacją zmiennej
+  * zmienne statyczne — wiązane z pamięcią przed rozpoczęciem działania programu i zwalniane w momencie jego zakończenia
+  * zmienne dynamiczne na stosie — alokacja na stosie w momencie dotarcia do deklaracji, zwalniane w momencie wyjścia z bloku
+  * zmienne dynamiczne jawne na stercie — alokacja i dealokacja jawnie w programie, odwołanie poprzez wskaźniki a nie nazwy
+  * zmienne dynamiczne niejawne na stercie – alokacja i dealokacja nie są jawnie zadeklarowane w programie, proces odbywa się automatycznie
+* zakres widoczności
+
 ### Obiekt
 
 **Obiekt** — zmienna, która jest instancją klasy. Jest strukturą danych, która zawiera w sobie dane oraz metody, które mogą być wywoływane na tych danych.
