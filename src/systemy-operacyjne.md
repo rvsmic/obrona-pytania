@@ -30,7 +30,7 @@ System operacyjny — program działający jako pośrednik między użytkownikie
 * Klasyfikacja
   * pod względem komunikacji z użytkownikiem
     * tekstowe — pierwsze wersje DOSu, Unix
-    * graficzne 
+    * graficzne
   * pod względem architektury
     * monolityczne — jednozadaniowe systemy posiadające najprostszą strukturę
     * warstwowe — osiadające hierarchiczną strukturę poleceń systemowych, możliwa wielozadaniowość
@@ -53,6 +53,23 @@ System operacyjny — program działający jako pośrednik między użytkownikie
     * otwarte — można uruchomić na dowolnej maszynie wskazanego rodzaju i w określonym stopniu modyfikować
     * wbudowane — systemy operacyjne dla urządzeń wbudowanych
   * Zazwyczaj jako otwarte systemy operacyjne spotyka się systemy w pełni programowe, czasowo niedeterministyczne stosujące wywłaszczenie przy przełączaniu zadań. Wbudowane systemy operacyjne są najczęściej czasowo deterministyczne, zazwyczaj nie stosują wywłaszczenia zadań, bywa, że są realizowane również w sprzęcie.
+
+#### Semafory
+
+**Semafory** — mechanizm synchronizacji procesów, który umożliwia procesom komunikację i synchronizację w celu uniknięcia konfliktów w dostępie do zasobów; obiekt systemu operacyjnego służącym do kontrolowania dostępu do ograniczonego zasobu
+
+* nienazwane
+  * do synchronizacji wątków w obrębie jednego procesu
+  * dostęp następuje przez jego adres
+  * może być użyty do synchronizacji procesów jeśli jest umieszczony w pamięci dzielonej
+* nazwane
+  * dostęp przez nazwę
+  * lepszy do synchronizacji procesów niż wątków
+  * wolniejszy od nienazwanych
+
+Semafor jest zmienną całkowitą, przyjmuje wartości nieujemne (≥0) lub — w przypadku semaforów binarnych — logiczne. Zmienna semaforowa musi mieć nadaną początkową wartość (nieujemną)
+
+Po nadaniu wartości semafora, proces może go zająć (zdejmując wartość 1) lub zwolnić (dodając wartość 1). Jeśli wartość semafora jest równa 0, proces czeka na zwolnienie semafora przez inny proces.
 
 ## 25. Procesy i wątki – charakterystyka i problemy
 
