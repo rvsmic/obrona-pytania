@@ -5,7 +5,7 @@
 * [x] [Matematyka](src/matematyka.md) 1-4 — <https://ashki23.github.io/markdown-latex.html>
 * [ ] [Podstawowe informacje o programowaniu](src/podstawowe-informacje-o-programowaniu.md) 5-8
 * [x] [Sieci komputerowe](src/sieci.md) 9-13
-* [ ] [Programowanie obiektowe](src/programowanie-obiektowe.md) 14-17
+* [x] [Programowanie obiektowe](src/programowanie-obiektowe.md) 14-17
 * [ ] [Algorytmy i struktury danych](src/algorytmy.md) 18-22
 * [ ] [Systemy operacyjne](src/systemy-operacyjne.md) 23-27
 * [ ] [Asyko, wbudowane](src/asyko-systemy-wbudowane.md) 28-29

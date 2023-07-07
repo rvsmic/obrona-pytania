@@ -119,7 +119,6 @@ public class Main {
 }
 ```
 
-
 * **Polimorfizm ad hoc** — polimorfizm, który jest realizowany przez przeciążanie metod i operatorów
 * **Polimorfizm uniwersalny** — polimorfizm, który jest realizowany przez dziedziczenie
 
@@ -128,4 +127,150 @@ public class Main {
 
 ## 16. Interfejsy i klasy abstrakcyjne w programowaniu obiektowym
 
+### Interfejs
+
+**Interfejs** — abstrakcyjna definicja typu posiadającego jedynie operacje, a nie dane. Kiedy w konkretnej klasie zdefiniowane są wszystkie metody interfejsu mówimy, że klasa implementuje dany interfejs. W Javie interfejsy są wykorzystywane do implementacji polimorfizmu. W C++ interfejsy są realizowane przez klasy abstrakcyjne.
+
+Przykład w Javie:
+
+```java
+public interface Soundable {
+    void makeSound();
+}
+
+public class Dog implements Soundable {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+```
+
+W Javie interfejs umożliwia implementację wielokrotnego dziedziczenia.
+
+W Javie interfejs może domyślne implementacje metod. (Wtedy klasa implementująca interfejs nie musi implementować wszystkich metod interfejsu.)
+
+Java 8 wprowadziła tzw. **interfejsy funkcyjne**. Są to interfejsy, które posiadają jedną metodę abstrakcyjną. Przykładem jest interfejs `Runnable`:
+
+```java
+public interface Runnable {
+    void run();
+}
+```
+
+Interfejsy funkcyjne mogą być wykorzystywane w wyrażeniach lambda.
+
+### Klasa abstrakcyjna
+
+**Klasa abstrakcyjna** — klasa, która nie może być instancjonowana (mieć swoich reprezentantów pod postacią obiektów), służy jako szablon dla innych klas. Klasa abstrakcyjna może posiadać metody abstrakcyjne (bez implementacji) oraz metody z implementacją. Klasa abstrakcyjna może implementować interfejsy. Klasa abstrakcyjna może dziedziczyć po innej klasie abstrakcyjnej. Pozwala na implementację polimorfizmu. Daje możliwość budowy hierarchii klas.
+
+Przykład w Javie:
+
+```java
+public abstract class Animal {
+    public abstract void makeSound();
+}
+
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+```
+
+W Javie klasa abstrakcyjna może implementować interfejsy.
+
 ## 17. Paradygmat i przykłady programowania generycznego (rodzajowego)
+
+### Programowanie generyczne
+
+**Programowanie generyczne** — programowanie, które pozwala na tworzenie kodu, który jest niezależny od typów danych (W językach statycznych nie trzeba znać w dokładnego typu zmiennej w momencie pisania kodu). W Javie programowanie generyczne jest realizowane przez **parametryzowane typy**. W C++ programowanie generyczne jest realizowane przez **szablony**.
+
+#### Przykład w Javie
+
+```java
+public class Box<T> {
+    private T value;
+    
+    public Box(T value) {
+        this.value = value;
+    }
+    
+    public T getValue() {
+        return value;
+    }
+    
+    public void setValue(T value) {
+        this.value = value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>("Hello");
+        Box<Integer> integerBox = new Box<>(123);
+        
+        System.out.println(stringBox.getValue()); // Hello
+        System.out.println(integerBox.getValue()); // 123
+    }
+}
+```
+
+#### Przykład w Javie z ograniczeniem typu
+
+```java
+public class Box<T extends Number> {
+    private T value;
+    
+    public Box(T value) {
+        this.value = value;
+    }
+    
+    public T getValue() {
+        return value;
+    }
+    
+    public void setValue(T value) {
+        this.value = value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<Integer> integerBox = new Box<>(123);
+        Box<String> stringBox = new Box<>("Hello"); // Błąd kompilacji
+    }
+}
+```
+
+#### Przykład w C++
+
+```cpp
+template <typename T>
+class Box {
+private:
+    T value;
+
+public:
+    Box(T value) {
+        this->value = value;
+    }
+
+    T getValue() {
+        return value;
+    }
+
+    void setValue(T value) {
+        this->value = value;
+    }
+};
+
+int main() {
+    Box<std::string> stringBox("Hello");
+    Box<int> integerBox(123);
+
+    std::cout << stringBox.getValue() << std::endl; // Hello
+    std::cout << integerBox.getValue() << std::endl; // 123
+}
+```
