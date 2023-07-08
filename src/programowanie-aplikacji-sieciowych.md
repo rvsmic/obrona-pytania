@@ -69,6 +69,36 @@ Termin gniazdo jest również używany w odniesieniu do punktu końcowego oprogr
 
 ## 60. Metody obsługi wielu klientów równolegle w aplikacjach sieciowych
 
+### Wątki
+
+* wątki realizowane w ramach jednego procesu (programu), mające własny stos, zestaw rejestrów,licznik rozkazów, indywidualne dane, zmienne lokalne, i informację o stanie ale wspólną przestrzeń adresową, ogólną obsługę sygnałów, pamięć wirtualną, dane oraz wejście-wyjście w obrębie danego procesu
+* w wielowątkowym procesie każdy wątek wykonuje się odzielnie i asynchronicznie
+* wielowątkowe serwery 
+  * mogą obsługiwać wiele połaczeń równolegle
+  * każde połączenie jest obsługiwane przez osobny wątek
+  * schemat działania
+    * tworzenie gniazda, prrzypisanie mu adresu IP i portu
+    * uruchomienie pętli nieskończonej, w której
+      * akceptowane połączenia od serwera
+      * w przypadku połączenie, tworzony nowy wątek, który obsługuje połączenie
+ 
+
+
+
+### Gniazda nieblokujące i monitorowanie zdarzeń
+
+* umożliwiają nieblokujące (asynchroniczne) operacje wejścia/wyjścia
+* operacja nie blokuje wątku (jej wywołanie wraca natychmiast) i może przekazać mniej bajtów danych niż było wymagane lub nawet wcale
+* operacja kończy się natychmiast
+* połączenie nie blokuje wątku, wynik zwracany jest natychmiast i wskazuje na to, czy połączono się z serwerem czy nie
+* przy czytaniu wątek nie jest blokowany jeśli nie ma danych, gdy nie ma danych w buforze to zwracany jest błąd, który nie wstrzymuje działania programu
+* można w pętli odpytywać czy są dane do odczytu, jeśli nie to można wykonać inne operacje
+* możliwe multipleksowanie, czyli obsługiwanie wielu kanałów przez jeden wątek
+* każda operacja asynchroniczna kończy się zmienieniem stanu gniazda
+* funkcje monitorujące operacje asynchroniczne np. `select()` — funkcja z rodziny monitorujących zniór desktyptorów WE/WY (tutaj gniazd), którą można wykorzystać do synchronizacji wielu operacji wykonywanych w tle (asynchronicznych)
+
+
+
 ## 61. Pocztowe protokoły warstwy aplikacji
 
 ### SMTP, SMTPS i ESMTP
