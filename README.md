@@ -19,4 +19,3 @@
 * [x] [Bezpieczeństwo](src/bezpieczenstwo.md) 63-66
 
 > [src](https://phavi.umcs.pl/at/attachments/2023/0420/142641-110008-zagadnienia-na-egz-dypl-dla-informatyki-i-st-zal-nr-1.pdf) — źródła pytań
-
