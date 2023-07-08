@@ -125,3 +125,172 @@ Wcześniejsze wersje POP, POP2 zastąpione całkowicie przez POP3.
 * przeszukiwanie skrzynki pocztowej po stronie serwera — nie ma konieczności pobrania wszystkich wiadomości
 
 ## 62. Porównanie HTTP i WebSocket
+
+### HTTP
+
+**HTTP** (ang. Hypertext Transfer Protocol) — protokół komunikacyjny między klientem a serwerem w siecie WWW. Używa portu 80 i 443 (szyfrowane) TCP.
+
+* zlokalizowany na 7 warstwie modelu OSI  (aplikacyjnej) i zależy od protokołu TCP na 4 warstwie (transportowej)
+* działa w półdupleksie (informacje są przesyłane i odbierane naprzemiennie)
+* określa formę żądań klienta (tj. np. przeglądarki www) dotyczących danych i formę odpowiedzi serwera
+* protokół bezstanowy — nie zapamiętuje poprzednich żądań klienta
+  * ten problem rozwiązywane za pomocą ciasteczek, sesji po stronie serywera, ukryte parametry, parametry w adresie URL
+* do przesyłania zasobów (plików, pliów HTML, graficznych, wyników zapytań itd.)
+* protokół tekstowy
+* protokół typu *zapytanie-odpowiedź* — zapytanie od klienta zawierające informacje o żądanym zasobie, odpowiedź od serwera z treścią zasobu lub informacją o błędzie
+* zapytanie składa się z:
+  * linii początkowowej zakończonej znakami CRLF
+  * 0 lub więcej nagłówków zakończonych znakami CRLF (nagłówek to właściwość zapytaniai odpowiedzi przesyłane wraz z samą wiadomością)
+  * pustego wiersza (czyli CRLF)
+  * opcjonalego ciała zapytania
+* zapytanie zawsze kończy się znakami CRLF
+* odpowiedz HTTO nie określa końca odpowiedzi, ale serwer musi zamknąć połączenie TCP po wysłaniu odpowiedzi — trzeba parsować nagłówek `Content-Length` lub `Transfer-Encoding`
+* ogólny format **żądania**:
+  
+  `Method Request-URI HTTP-Version \r\n`
+
+  `HEADER1: VALUE1 \r\n`
+  
+  `HEADER2: VALUE2 \r\n`
+
+  `...`
+  
+  `HEADERX: VALUEX \r\n`
+  
+  `\r\n`
+  
+  `BODY\r\n`
+  * `METHOD` — metoda żądania, np. 
+    * `GET` — pobranie zasobu wskazanego przez Request-URI
+    * `HEAD` — pobiera informacje o zasobie, stosowane do sprawdzania dostępności zasobu
+    * `PUT` — przyjęcie danych przesyłanych od klienta do serwera, najczęściej aby zaktualizować wartośćzasobu
+    * `POST` — przyjęcie danych przesyłanych od klienta do serwera (np. wysyłanie zawartości formula-rzy)
+    * `DELETE` — żądanie usunięcia zasobu
+    * `OPTIONS` — informacje o opcjach i wymaganiach dotyczących zasobu
+    * `TRACE` — diagnostyka, analiza kanału komunikacyjnego
+    * `CONNECT` — żądanie przeznaczone dla serwerów pośredniczących pełniących funkcje tunelowania
+    * `PATCH` — aktualizacja części zasobu (np. jednego pola).
+  * `URI` — ścieżka do zasobu, np. `/index.html`
+  * `HTTP-Version` — wersja protokołu np. `HTTP/1.1`
+* ogólny format **odpowiedzi** HTTP
+    
+    `HTTP-Version Status-Code Reason-Phrase \r\n`
+    
+    `HEADER1: VALUE1 \r\n`
+    
+    `HEADER2: VALUE2 \r\n`
+    
+    `...`
+    
+    `HEADERX: VALUEX \r\n`
+    
+    `\r\n`
+    
+    `BODY\r\n`
+    * `HTTP-Version` — wersja protokołu np. `HTTP/1.1`
+    * `Status-Code` — kod statusu odpowiedzi
+      * `1xx` — kody informacyjne
+      * `2xx` — kody powodzenia
+      * `3xx` — kody przekierowania
+      * `4xx` — kod błądu aplikacji klienta
+      * `5xx` — kod błądu serwera
+    * `Reason-Phrase` — wiadomość powiązana z danym kodem odpowiedzi, krótki opis kodu statusu, np. `OK`, `Not Found`, `Internal Server Error`
+* przykład komunikacji
+  * żądanie
+  `GET /index.html HTTP/1.1`
+
+  `HOST: 212.182.24.27`
+  * odpowiedź
+  `HTTP/1.1 200 OK`
+  
+  `Date: Thu, 13 Apr 2017 14:25:38 GMT`
+  
+  `Server: Apache/2.4.18 (Ubuntu)`
+  
+  `Last-Modified: Thu, 13 Apr 2017 13:57:13 GMT`
+  
+  `ETag: "2c39-54d0cb3af4405"`
+  
+  `Accept-Ranges: bytes`
+  
+  `Content-Length: 11321`
+  
+  `Vary: Accept-Encoding`
+  
+  `Content-Type: text/html`
+  
+  ``
+  
+  `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"`
+  
+  `"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">`
+  
+  `<html xmlns="http://www.w3.org/1999/xhtml">`
+  
+    `<head>`
+    
+      `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
+      
+      `<title>Apache2 Ubuntu Default Page: It works</title>`
+      
+    `</head>`
+    
+    `<body>`
+    
+    `...`
+    
+    `</body>`
+
+  `</html>`
+
+### WebSocket
+
+**WebSocket** – jest protokołem komunikacyjnym, zapewniającym dwukierunkowy kanał wymiany danych poprzez pojedyncze połączenie TCP. Zaprojektowany do działania na portach 80 i 443 (zabezpieczone) przypisanych fo HTTP. Ma wspierać działania proxy i pośredników.
+
+* zlokalizowany na 7 warstwie modelu OSI  (aplikacyjnej) i zależy od protokołu TCP na 4 warstwie (transportowej)
+* działa w duplexie (przesyłanie w dwóch kierunkach jednocześnie) — zmiejsza opóźnienia i obciążenie sieci
+* niższe obciążenie serwera niż w przypadku HTTP, ułatwiając przy tym przesyłanie danych w czasie rzeczywistym dzięki zapewnieniu znormalizowanego sposobu wysyłania przez serwer treści do klienta bez uprzedniego żądania klienta i umożliwienia przesyłania komunikatów tam i z powrotem przy zachowaniu aktywnego połączenia
+* umożliwia przesyłanie wiadomości na wierzchu protokołu TCP
+* każda komenda w żądaniu i odpowiedzi jest zakończona znakami CRLF (tak jak w HTTP)
+* komunikacja
+  * klient wysyła do serwera żądanie inincjalizujące (*handshahe*) wykorzystując HTTP
+    * ze względu na kompatybilność z serwerami WWW niemal identyczne jak zapytanie HTTP, format odpowiedzi serwera zgodny z odpowiedzią HTTP
+    * żadanie klienta
+  
+    `GET /chat HTTP/1.1`
+
+    `Host: server.example.com`
+    
+    `Upgrade: websocket`
+
+    `Connection: Upgrade`
+    
+    `Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==`
+    
+    `Sec-WebSocket-Protocol: chat, superchat`
+    
+    `Sec-WebSocket-Version: 13`
+    
+    `Origin: http://example.com`
+
+    * odpowiedź serwera
+
+    `HTTP/1.1 101 Switching Protocols`
+
+    `Upgrade: websocket`
+
+    `Connection: Upgrade`
+
+    `Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=`
+
+    `Sec-WebSocket-Protocol: chat`
+  * po zestawieniu połączenia, obie strony mogą wymieniać się danymi w dowolnym momencie, wysyłając
+pakiet danych (inaczej niż w protokole HTTP, gdzie komunikacja wyglądała w ten sposób, iż na każde żądanie wysyłana była odpowiedź)
+    * dalsza komunikacja ta odbywa się poprzez socket TCP z pominięciem protokołu HTTP
+    * wiadomości muszą być przesyłane w specjalnie sformatowanych ramkach
+* rozwiązanie czasu rzeczywistego — nie trzeba ręcznie odpytawać w przeciwieństwie do HTTP
+* tworzy po stronie klienta socker, który poprzez adres IP i nr portu utrzymuje obustronny kanał z serwerem
+* ws (Web Servieces) dla połączeń nieszyfrowanych i wss (Web Secure Servieces) dla połączeń szyfrowanych
+
+Komunikacja WebSocket
+![komunikacja websocket](/src/img/pas/websocket.png)
