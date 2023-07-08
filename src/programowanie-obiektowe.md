@@ -25,6 +25,7 @@ public class Person {
     }
     
     // METODY
+    // GETTERY (akcesory)
     public String getName() {
         return name;
     }
@@ -32,7 +33,7 @@ public class Person {
     public int getAge() {
         return age;
     }
-    
+    // SETTERY (mutator)
     public void setName(String name) {
         this.name = name;
     }
@@ -40,7 +41,7 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-    
+    // INNE METODY
     public void introduce() {
         System.out.println("Hi, my name is " + name + " and I am " + age + " years old.");
     }
@@ -146,9 +147,9 @@ public class Dog implements Soundable {
 }
 ```
 
-W Javie interfejs umożliwia implementację wielokrotnego dziedziczenia.
+W Javie interfejs umożliwia implementację wielokrotnego dziedziczenia, ponieważ klasa może implementować wiele interfejsów, a dziedziczyć może tylko po jednej klasie.
 
-W Javie interfejs może domyślne implementacje metod. (Wtedy klasa implementująca interfejs nie musi implementować wszystkich metod interfejsu.)
+W Javie interfejs może domyślne implementować metody. (Wtedy klasa implementująca interfejs nie musi implementować wszystkich metod interfejsu.)
 
 Java 8 wprowadziła tzw. **interfejsy funkcyjne**. Są to interfejsy, które posiadają jedną metodę abstrakcyjną. Przykładem jest interfejs `Runnable`:
 
