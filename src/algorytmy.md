@@ -115,7 +115,7 @@ Asymptotyczne ************************************ograniczenie górne***********
 
 Asymptotyczne ************************************ograniczenie dolne************************************ danej funkcji.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/52c27bc0-2827-4de2-9712-73cce8087546/Untitled.png)
+![big-o](../src/img/algorytmy/big-o.png)
 
 ### Rodzaje złożoności
 
@@ -219,7 +219,7 @@ Asymptotyczne ************************************ograniczenie dolne************
 2. Jeżeli nie są właściwie uporządkowane, zamieniamy je miejscami.
 3. Powtarzamy procedurę n-razy za każdym razem przeglądając o jeden element mniej.
 
-![Bubble-sort-example-300px.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89833451-f446-45c9-82c8-623323023613/Bubble-sort-example-300px.gif)
+![Bubble-sort-example-300px.gif](../src/img/algorytmy/Bubble-sort-example-300px.gif)
 
 <aside>
 💡 W i-tym przebiegu wyznaczamy i-ty najmniejszy/największy element zbioru oraz umieszczany jest na właściwej pozycji
@@ -327,9 +327,9 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 
 ### Złożoność: O(n log n)
 
-![Merge-sort-example-300px.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2eb816a6-a48e-46ac-b286-e100f557fa46/Merge-sort-example-300px.gif)
+![Merge-sort-example-300px.gif](../src/img/algorytmy/Merge-sort-example-300px.gif)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fa61c2c6-7a07-460b-ae7d-68b0988522ac/Untitled.png)
+![Untitled](../src/img/algorytmy/merge-sort.png)
 
 ## QuickSort (sortowanie szybkie)
 
@@ -342,7 +342,7 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 5. Następnie osobno (rekurencyjnie) sortujemy poszczególne fragmenty tablicy. ← krok rekurencyjny
 6. Sortowanie zostaje zakończone w momencie, gdy fragment tablicy uzyskany z podziału zawiera tylko jeden element.
 
-![Sorting_quicksort_anim.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21d510b4-0492-4f06-9b91-54564c426262/Sorting_quicksort_anim.gif)
+![Sorting_quicksort_anim.gif](../src/img/algorytmy/Sorting_quicksort_anim.gif)
 
 ### Złożoność
 
@@ -376,7 +376,7 @@ Algorytm wyznacza rozwiązania w każdym kroku dokonując **zachłannego** (tj. 
 2. wybranie **lokalnie optymalnego** rozwiązania dla tego etapu
 3. kontynuowanie obliczeń na podstawie ostatnio dokonanego wyboru 
 
-![Dijkstra_Animation.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e8091c8-769d-47ae-bcc2-fafa4482f220/Dijkstra_Animation.gif)
+![Dijkstra_Animation.gif](../src/img/algorytmy/Dijkstra_Animation.gif)
 
 <aside>
 ❗ Brak spojrzenia w przyszłość powoduje, że algorytmy zachłanne mogą nie znajdować optymalnych rozwiązań
@@ -412,11 +412,11 @@ Wyszukiwanie z nawrotami (************************backtracking******************
 - ************Grafem************ nazywamy parę zbiorów ******(V, E)******. Elementy zbioru **V** nazywamy wierzchołkami, a elementy zbioru **E** nazywamy krawędziami. Każda krawędź jest parą wierzchołków, 
 tzn. $E \sube \{\{u,v\}: u, v \in V\}$
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f743ef28-ec7c-47ef-8543-d620c46a0f45/Untitled.png)
+    ![Untitled](../src/img/algorytmy/graf-nieskierowany.png)
     
 - ********Graf skierowany******** → graf, w którym każda krawędź jest ****************************************************************uporządkowaną parą wierzchołków****************************************************************
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e92c8607-d4b2-4226-b50c-47dc4b00edf3/Untitled.png)
+    ![Untitled](../src/img/algorytmy/graf-skierowany.png)
     
 - Krawędzie **********************************łączą wierzchołki**********************************
 - ******************************Droga (ścieżka)****************************** to dowolny ciąg wierzchołków taki, że występuje krawędź łącząca każdy wierzchołek z następnym (w grafie skierowanym dodatkowo te krawędzie muszą być skierowane w jedną stronę)
@@ -426,7 +426,7 @@ tzn. $E \sube \{\{u,v\}: u, v \in V\}$
 - **********************Cykl prosty********************** → cykl, w którym nie powtarzają się wierzchołki (poza pierwszym i ostatnim).
 - Jeżeli graf posiada co najmniej jeden cykl, to mówimy, że jest ********grafem cyklicznym********, w przeciwnym wypadku jest to **graf acykliczny**.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/aca2c4a3-4ddc-4f1d-8c4b-c78d563374a9/Untitled.png)
+    ![Untitled](../src/img/algorytmy/cykle.png)
     
 - ********Graf pełny******** → graf posiadający krawędzie pomiędzy każdą parą różnych wierzchołków
 - Jeśli istnieje możliwość rozmieszczenia wierzchołków grafu nieskierowanego na płaszczyźnie tak, a następnie narysowania jego krawędzi jako linii ciągłych, które się nie przecinają to graf nazywamy ******************planarnym******************, w przeciwnym wypadku jest to graf ************************nieplanarny************************.
@@ -445,25 +445,25 @@ Graf G = (V, R) przedstawiony zostaje jako dwuwymiarowa tablica A o wymiarachc |
 
 Dla grafów nieskierowanych macierz sąsiedztwa jest symetryczna.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8c4bdfe3-cedf-40d3-a8e8-a5e8a8e1f7b2/Untitled.png)
+![Untitled](../src/img/algorytmy/macierz-sasiedztwa-nieskierowany.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e7145643-0618-481b-b5f9-8d45b79f2f15/Untitled.png)
+![Untitled](../src/img/algorytmy/macierz-sasiedztwa-skierowany.png)
 
 ### Lista sąsiedztwa
 
 Graf G = (V, R) przedstawiamy jako tablicę list taką, że lista tab[a] zawiera sąsiadów wierzchołka a. (Złożoność pamięciowa O(|V|, |E|).
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/516d3ec7-43d5-408b-ac6b-0a0d23671dfa/Untitled.png)
+![Untitled](../src/img/algorytmy/lista-sasiedztwa-nieskierowany.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2cda0ea2-2530-4f77-a25a-6fccc4912948/Untitled.png)
+![Untitled](../src/img/algorytmy/lista-sasiedztwa-skierowany.png)
 
 ### Lista krawędzi
 
 Lista, na której przechowujemy wszystkie krawędzie występujące w grafie (Złożoność pamięciowa O(|E|)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a19d0a41-a10b-4c62-9e2a-b7e0ecf506b1/Untitled.png)
+![Untitled](../src/img/algorytmy/lista-krawedzi-nieskierowany.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7367378b-ca89-4340-baf3-c27933439a44/Untitled.png)
+![Untitled](../src/img/algorytmy/lista-krawedzi-skierowany.png)
 
 ### Macierz incydencji
 
@@ -478,7 +478,7 @@ Dla nieskierowanego 1 - wierzchołek należy do krawędzi, 0 - wierzchołek nie 
 
 Złożoność pamięciowa O(|V| * |E|)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3174bdf2-704f-4d31-b567-99077431065c/Untitled.png)
+![Untitled](../src/img/algorytmy/macierz-incydencji.png)
 
 ## Przeszukiwanie grafu
 
@@ -505,7 +505,7 @@ Złożoność pamięciowa O(|V| * |E|)
 
 ********************Drzewem******************** nazywamy spójny (dowolne dwa wierzchołki połączone ścieżką) i acykliczny graf nieskierowany, w którym istnieje dokładnie jedna ścieżka do każdego wierzchołka.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/47a7998a-35ce-485a-b00b-930ffc8b0933/Untitled.png)
+![Untitled](../src/img/algorytmy/drzewo.png)
 
 - Drzewo jest zbudowane z **węzłów** przechowujących dane (**********node**********)
 - Węzły są powiązane w sposób hierarchiczny za pomocą krawędzi (strzałka oznacza hierarchię)
