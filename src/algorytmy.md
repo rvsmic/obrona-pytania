@@ -2,11 +2,11 @@
 [`back to README.md`](../README.md)
 ## Podstawowe definicje
 
-****Algorytm**** → precyzyjnie określony, jednoznaczny, skończony opis procesu przetworzenia danych wejściowych do pewnych danych wyjściowych.
+****Algorytm**** — precyzyjnie określony, jednoznaczny, skończony opis procesu przetworzenia danych wejściowych do pewnych danych wyjściowych.
 
-******Algorytmika****** → dział informatyki zajmujący się poszukiwaniem, konstruowaniem i badaniem algorytmów (w kontekście przydatności do rozwiązywania problemów z wykorzystaniem komputerów)
+******Algorytmika****** — dział informatyki zajmujący się poszukiwaniem, konstruowaniem i badaniem algorytmów (w kontekście przydatności do rozwiązywania problemów z wykorzystaniem komputerów)
 
-**********Struktura danych********** → zaimplementowana realizacja danych w programie
+**********Struktura danych********** — zaimplementowana realizacja danych w programie
 
 ## Programowanie dynamiczne
 
@@ -26,7 +26,7 @@ Polega na podziale rozwiązywanego problemu na podproblemy względem kilku param
 - wraz ze wzrostem l. parametrów, wzrasta zapotrzebowanie na pamięć i moc obliczeniową
 
 <aside>
-💡 Zaprojektowany algorytm ma postać równania rekurencyjnego, opisującego optymalną funkcję celu tego problemu.
+> 💡 Zaprojektowany algorytm ma postać równania rekurencyjnego, opisującego optymalną funkcję celu tego problemu.
 
 </aside>
 
@@ -76,8 +76,8 @@ Polegają na losowym przeszukiwaniu ******************************************pr
 
 ### Podział algorytmów probabilistycznych
 
-- ******************Las Vegas****************** → zawsze zwracające poprawne wyniki w bliżej nieokreślonym czasie (randomizacja służy przyspieszeniu działania algorytmu, średnia złożoność nie ulega zmianie)
-- ************************Monte Carlo************************ → kończące się w ustalonym czasie, ale bez gwarancji ustalenia wyniku (prawdopodobieństwo zwrócenia poprawnego wyniku ******************bliskie 1******************)
+- ******************Las Vegas****************** — zawsze zwracające poprawne wyniki w bliżej nieokreślonym czasie (randomizacja służy przyspieszeniu działania algorytmu, średnia złożoność nie ulega zmianie)
+- ************************Monte Carlo************************ — kończące się w ustalonym czasie, ale bez gwarancji ustalenia wyniku (prawdopodobieństwo zwrócenia poprawnego wyniku ******************bliskie 1******************)
 
 ### Przykłady
 
@@ -93,7 +93,7 @@ Jest to miara wyrażająca **ilość zasobów komputerowych** (*****************
 Jest to ilość pamięci jaką potrzebuje algorytm dla danych wejściowych o rozmiarze n.
 
 <aside>
-💡 Definicja rozmiaru danych wejściowych zależy od rozważanego problemu (sortowanie - liczba elementów do posortowania, mnożenie liczb całkowitych - liczba bitów potrzebnych do reprezentacji binarnej).
+> 💡 Definicja rozmiaru danych wejściowych zależy od rozważanego problemu (sortowanie - liczba elementów do posortowania, mnożenie liczb całkowitych - liczba bitów potrzebnych do reprezentacji binarnej).
 W praktyce do obliczania złożoności pamięciowej nie uwzględnia się pamięci do odczytu na dane wejściowe i do zapisu na dane wyjściowe.
 
 </aside>
@@ -103,13 +103,13 @@ W praktyce do obliczania złożoności pamięciowej nie uwzględnia się pamięc
 Jest to **************************liczba kroków************************** (elementarnych operacji), po jakich algorytm zatrzymuje się dla danych wejściowych o rozmiarze **n**.
 
 <aside>
-💡 Jest to własność samego algorytmu, niezależna od komputera czy języka programowa.
+> 💡 Jest to własność samego algorytmu, niezależna od komputera czy języka programowa.
 
 </aside>
 
 ### Notacja O
 
-Asymptotyczne ************************************ograniczenie górne************************************ danej funkcji → dana funkcja f(n) jest **************O(g(n))**************, jeżeli dla wszystkich wartości n > n_0, wartość funkcji f(n) jest nie większa niż cg(n).
+Asymptotyczne ************************************ograniczenie górne************************************ danej funkcji — dana funkcja f(n) jest **************O(g(n))**************, jeżeli dla wszystkich wartości n > n_0, wartość funkcji f(n) jest nie większa niż cg(n).
 
 ### Notacja $\Omega$
 
@@ -119,25 +119,25 @@ Asymptotyczne ************************************ograniczenie dolne************
 
 ### Rodzaje złożoności
 
-- pesymistyczna → maksymalna ilość zasobów potrzebynych przy (najgorszych) danych wejściowych o rozmiarze n
-- oczekiwana → średnia ilość zasobów potrzebnych przy danych wejściowych o rozmiarze n (obliczana na podstawie rozkładu prawdopodobieństwa)
-- zamortyzowana → określana dla wielokrotnie powtarzanych operacji, wykonywanych na strukturach danych (średnia bez rozkładu prawdopodobieństwa).
+- pesymistyczna — maksymalna ilość zasobów potrzebynych przy (najgorszych) danych wejściowych o rozmiarze n
+- oczekiwana — średnia ilość zasobów potrzebnych przy danych wejściowych o rozmiarze n (obliczana na podstawie rozkładu prawdopodobieństwa)
+- zamortyzowana — określana dla wielokrotnie powtarzanych operacji, wykonywanych na strukturach danych (średnia bez rozkładu prawdopodobieństwa).
 
 ## Struktury danych
 
 ### Typy proste
 
-- typ porządkowy → każdy element ma ściśle określoną kolejność w typie (operacje poprzedniego i następnego elementu)
+- typ porządkowy — każdy element ma ściśle określoną kolejność w typie (operacje poprzedniego i następnego elementu)
 - typ rzeczywisty
 
 ### Typy strukturalne
 
-- typ tablicowy → ciągi danych tego samego typu statycznego o z góry określonej długości (dostęp bezpośredni i indeksowany)
-- typ rekordowy → ciągi danych niekoniecznie tego samego typu statycznego (dostęp bezpośredni, przez identyfikator danej)
+- typ tablicowy — ciągi danych tego samego typu statycznego o z góry określonej długości (dostęp bezpośredni i indeksowany)
+- typ rekordowy — ciągi danych niekoniecznie tego samego typu statycznego (dostęp bezpośredni, przez identyfikator danej)
 - typ plikowy - typ dynamiczny (zmienna liczba elementów) o elementach tego samego typu statycznego z sekwencyjnym trybem dostępu (dostęp do kolejnego elementu, możliwy po odczytaniu wcześniejszych)
 - typ wskaźnikowy - obejmuje adresy danych w pamięci
-- typ napisowy → operuje na ciągach znaków (w rzeczywistości implementowany z użyciem innych struktur)
-- typ obiektowy → podobny do rekordowego, ale pozwalający obejmować nie tylko dane ale również metody
+- typ napisowy — operuje na ciągach znaków (w rzeczywistości implementowany z użyciem innych struktur)
+- typ obiektowy — podobny do rekordowego, ale pozwalający obejmować nie tylko dane ale również metody
 
 ### Definicje
 
@@ -146,7 +146,7 @@ Asymptotyczne ************************************ograniczenie dolne************
 ********************Abstrakcyjnym typem danych******************** nazywamy formalną specyfikację przechowywania obiektów oraz zbiór dobrze opisanych operacji na tych obiektach.
 
 <aside>
-💡 Struktura danych jest implementacją konkretnej abstrakcyjnej struktury danych.
+> 💡 Struktura danych jest implementacją konkretnej abstrakcyjnej struktury danych.
 
 </aside>
 
@@ -167,11 +167,11 @@ Asymptotyczne ************************************ograniczenie dolne************
 
 ## Definicje
 
-**************************************Warunek stabilności************************************** → zachowanie początkowego ustawienia względem siebie elementów równych (rekordów o takich samych kluczach).
+**************************************Warunek stabilności************************************** — zachowanie początkowego ustawienia względem siebie elementów równych (rekordów o takich samych kluczach).
 
-**************************************Operacja dominująca************************************** → porównanie elementów w ciągu.
+**************************************Operacja dominująca************************************** — porównanie elementów w ciągu.
 
-************************************************************************Złożoność pamięciowa alg. sortowania************************************************************************ → ilość dodatkowej pamięci (oprócz n-miejsc pamięci dla elementów ciągu) potrzebnej do wykonania algorytmu.
+************************************************************************Złożoność pamięciowa alg. sortowania************************************************************************ — ilość dodatkowej pamięci (oprócz n-miejsc pamięci dla elementów ciągu) potrzebnej do wykonania algorytmu.
 
 ## Typy algorytmów sortowania
 
@@ -222,7 +222,7 @@ Asymptotyczne ************************************ograniczenie dolne************
 ![Bubble-sort-example-300px.gif](../src/img/algorytmy/Bubble-sort-example-300px.gif)
 
 <aside>
-💡 W i-tym przebiegu wyznaczamy i-ty najmniejszy/największy element zbioru oraz umieszczany jest na właściwej pozycji
+> 💡 W i-tym przebiegu wyznaczamy i-ty najmniejszy/największy element zbioru oraz umieszczany jest na właściwej pozycji
 
 </aside>
 
@@ -231,11 +231,11 @@ Asymptotyczne ************************************ograniczenie dolne************
 ### Możliwe ulepszenia
 
 - zapamiętywanie czy w trakcie przejścia dokonano zmian - jeżeli nie, algorytm kończy działanie
-- zapamiętywanie pozycji ostatniej zmiany → wszystkie pary obiektów sąsiadujących powyżej (poniżej) tej pozycji, są już ustawione w odpowiedniej kolejności.
+- zapamiętywanie pozycji ostatniej zmiany — wszystkie pary obiektów sąsiadujących powyżej (poniżej) tej pozycji, są już ustawione w odpowiedniej kolejności.
 
 ## Sortowanie koktailowe
 
-Jest do ********************************************************************dwukierunkowe sortowanie bąbelkowe******************************************************************** → wersja bubble sorta, w której przejścia po tablicy odbywają się ze zmiennym kierunkiem (raz od prawej - malejąco, a potem od lewej - rosnąco).
+Jest do ********************************************************************dwukierunkowe sortowanie bąbelkowe******************************************************************** — wersja bubble sorta, w której przejścia po tablicy odbywają się ze zmiennym kierunkiem (raz od prawej - malejąco, a potem od lewej - rosnąco).
 
 Typowa złożoność czasowa jest klasy O(n^2), dla zbiorów w znacznym stopniu posortowanych, złożoność redukuje się do O(n).
 
@@ -251,7 +251,7 @@ Typowa złożoność czasowa jest klasy O(n^2), dla zbiorów w znacznym stopniu 
 
 ### Możliwe ulepszenia
 
-Ciąg wynikowy jest już uporządkowany → można zastosować metodę **przeszukiwania połówkowego (binary serach)**, w celu ustalenia miejsca wstawienia nowego obiektu.
+Ciąg wynikowy jest już uporządkowany — można zastosować metodę **przeszukiwania połówkowego (binary serach)**, w celu ustalenia miejsca wstawienia nowego obiektu.
 
 Ulepszenie to zmniejsza tylko liczbę porównań, a nie liczbę potrzebnych przesunięć.
 
@@ -265,7 +265,7 @@ Ulepszenie to zmniejsza tylko liczbę porównań, a nie liczbę potrzebnych prze
 4. Sortowanie powtórz i zmniejsz odstęp, aż osiągnie on wartość 1. Wtedy cały zbiór sortujemy typowym Insertion Sortem.
 
 <aside>
-💡 Dzięki początkowym, dużym odstępom, elementy były przesuwane w zbiorze bardziej efektywnie - na duże odległości.
+> 💡 Dzięki początkowym, dużym odstępom, elementy były przesuwane w zbiorze bardziej efektywnie - na duże odległości.
 
 </aside>
 
@@ -291,7 +291,7 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 ## Opis strategii
 
 <aside>
-💡 Problem należy podzielić rekurencyjnie na dwa lub więcej podproblemów ********tego samego lub podobnego typu********. Rozwiązania uzyskane po wykonaniu algorytmów częściowych należy **scalić** w celu uzyskania rozwiązania ostatecznego.
+> 💡 Problem należy podzielić rekurencyjnie na dwa lub więcej podproblemów ********tego samego lub podobnego typu********. Rozwiązania uzyskane po wykonaniu algorytmów częściowych należy **scalić** w celu uzyskania rozwiązania ostatecznego.
 
 </aside>
 
@@ -302,9 +302,9 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 
 ### Etapy pracy
 
-1. Dziel → podział na podproblemy
-2. Zwyciężaj → rekurencyjne rozwiązanie problemów
-3. Scalaj → łączenie rozwiązań z podproblemów
+1. Dziel — podział na podproblemy
+2. Zwyciężaj — rekurencyjne rozwiązanie problemów
+3. Scalaj — łączenie rozwiązań z podproblemów
 
 ### Uwagi
 
@@ -313,8 +313,8 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 
 ### Przykłady algorytmów
 
-- sortowanie przez scalanie (MergeSort) → O(n log(n))
-- sortowanie szybkie (QuickSort) → O(n log(n)) / O(n^2)
+- sortowanie przez scalanie (MergeSort) — O(n log(n))
+- sortowanie szybkie (QuickSort) — O(n log(n)) / O(n^2)
 - wyszukiwanie binarne (Binary search) O(log_2 n)
 
 ## MergeSort (sortowanie przez scalanie)
@@ -414,25 +414,25 @@ tzn. $E \sube \{\{u,v\}: u, v \in V\}$
     
     ![Untitled](../src/img/algorytmy/graf-nieskierowany.png)
     
-- ********Graf skierowany******** → graf, w którym każda krawędź jest ****************************************************************uporządkowaną parą wierzchołków****************************************************************
+- ********Graf skierowany******** — graf, w którym każda krawędź jest ****************************************************************uporządkowaną parą wierzchołków****************************************************************
     
     ![Untitled](../src/img/algorytmy/graf-skierowany.png)
     
 - Krawędzie **********************************łączą wierzchołki**********************************
 - ******************************Droga (ścieżka)****************************** to dowolny ciąg wierzchołków taki, że występuje krawędź łącząca każdy wierzchołek z następnym (w grafie skierowanym dodatkowo te krawędzie muszą być skierowane w jedną stronę)
-- ****************************Ścieżka prosta**************************** → ścieżka, na której nie powtarzają się wierzchołki
-- ********Długość ścieżki******** → liczba krawędzi na ścieżce (w przypadku rozważania grafów, w których do krawędzi przypisane są wagi, długość ścieżki jest sumą wag krawędzi znajdujących się na niej)
-- ********Cykl******** → ścieżka, na której początku i końcu występuje ten sam wierzchołek.
-- **********************Cykl prosty********************** → cykl, w którym nie powtarzają się wierzchołki (poza pierwszym i ostatnim).
+- ****************************Ścieżka prosta**************************** — ścieżka, na której nie powtarzają się wierzchołki
+- ********Długość ścieżki******** — liczba krawędzi na ścieżce (w przypadku rozważania grafów, w których do krawędzi przypisane są wagi, długość ścieżki jest sumą wag krawędzi znajdujących się na niej)
+- ********Cykl******** — ścieżka, na której początku i końcu występuje ten sam wierzchołek.
+- **********************Cykl prosty********************** — cykl, w którym nie powtarzają się wierzchołki (poza pierwszym i ostatnim).
 - Jeżeli graf posiada co najmniej jeden cykl, to mówimy, że jest ********grafem cyklicznym********, w przeciwnym wypadku jest to **graf acykliczny**.
     
     ![Untitled](../src/img/algorytmy/cykle.png)
     
-- ********Graf pełny******** → graf posiadający krawędzie pomiędzy każdą parą różnych wierzchołków
+- ********Graf pełny******** — graf posiadający krawędzie pomiędzy każdą parą różnych wierzchołków
 - Jeśli istnieje możliwość rozmieszczenia wierzchołków grafu nieskierowanego na płaszczyźnie tak, a następnie narysowania jego krawędzi jako linii ciągłych, które się nie przecinają to graf nazywamy ******************planarnym******************, w przeciwnym wypadku jest to graf ************************nieplanarny************************.
-- ********************************Stopień wierzchołka (deg(v))******************************** → w grafie nieskierowanym to liczba incydentnych z nim krawędzi, w grafie skierowanym, to suma stopni wejściowego (l. kończących się w nim krawędzi) i wyjściowego (l. rozpoczynających się w nim krawędzi) danego wierzchołka.
-- ****Graf regularny**** → graf, w którym każdy wierzchołek ma taki sam stopień.
-- ************f-graf************ → graf z ograniczonym stopniem wierzchołka → jego stopień nie może być większy niż f.
+- ********************************Stopień wierzchołka (deg(v))******************************** — w grafie nieskierowanym to liczba incydentnych z nim krawędzi, w grafie skierowanym, to suma stopni wejściowego (l. kończących się w nim krawędzi) i wyjściowego (l. rozpoczynających się w nim krawędzi) danego wierzchołka.
+- ****Graf regularny**** — graf, w którym każdy wierzchołek ma taki sam stopień.
+- ************f-graf************ — graf z ograniczonym stopniem wierzchołka — jego stopień nie może być większy niż f.
 - Graf (V’, E’) nazywamy ******************podgrafem****************** grafu (V, E) jeżeli $V' \sube V$ oraz $E' \sube E$.
 - Graf jest ************spójny************, gdy istnieje ścieżka pomiędzy dowolnymi dwoma wierzchołkami (w przypadku jeśli graf jest skierowany i spójny to mówimy że jest **************************silnie spójny**************************).
 - **************(Silnie) spójną składową************** grafu G nazywamy maksymalny (silnie) spójny podgraf F.
@@ -469,10 +469,10 @@ Lista, na której przechowujemy wszystkie krawędzie występujące w grafie (Zł
 
 Macierz incydencji to tablica o rozmiarach |V| * |E|, taka że:
 
-- krawędź wychodzi z danego wierzchołka → -1
-- krawędź wchodzi do danego wierzchołka → +1
-- wierzchołek nie należy do krawędzi → 0
-- pętla własna → 2
+- krawędź wychodzi z danego wierzchołka — -1
+- krawędź wchodzi do danego wierzchołka — +1
+- wierzchołek nie należy do krawędzi — 0
+- pętla własna — 2
 
 Dla nieskierowanego 1 - wierzchołek należy do krawędzi, 0 - wierzchołek nie należy do krawędzi.
 
@@ -490,7 +490,7 @@ Złożoność pamięciowa O(|V| * |E|)
 4. Kontynuujemy dopóki nie odwiedzimy wszystkich wierzchołków.
 
 <aside>
-💡 Testowanie spójności grafu → jeżeli procedura wywołana dla pierwszego wierzchołka dotrze do wszystkich wierzchołków, to graf jest spójny.
+> 💡 Testowanie spójności grafu — jeżeli procedura wywołana dla pierwszego wierzchołka dotrze do wszystkich wierzchołków, to graf jest spójny.
 
 </aside>
 
@@ -513,20 +513,20 @@ Złożoność pamięciowa O(|V| * |E|)
 - Węzeł może mieć wielu synów, ale jest połączony z dokładnie jednym **ojcem**
 - Synowie tego samego ojca nazywani są ************braćmi************
 - Węzeł nie mający synów nazywamy **liściem**, w przeciwnym razie jest to ********************************węzeł wewnętrzny********************************
-- **************Ścieżka************** → ciąg węzłów, w którym każde dwa sąsiednie węzły są połączone krawędzią.
-- ******************Długość ścieżki****************** → liczba zawartych w niej krawędzi lub liczba zawartych w niej węzłów - 1.
+- **************Ścieżka************** — ciąg węzłów, w którym każde dwa sąsiednie węzły są połączone krawędzią.
+- ******************Długość ścieżki****************** — liczba zawartych w niej krawędzi lub liczba zawartych w niej węzłów - 1.
 
 ### Parametry drzew
 
-- ********głębokość wierzchołka →******** liczba wierzchołków, przez które należy przejść od korzenia
-- ********************************************wysokość wierzchołka******************************************** → maksymalna liczba wierzchołków do liścia
-- **************wysokość drzewa************** → maksymalna głębokość liścia - wysokość korzenia +1
-- **************************stopień wierzchołka →************************** liczba jego synów
-- ******************stopień drzewa****************** → maksymalny stopień wierzchołka
-- ******drzewo k-arne****** → drzewo w którym każdy wierzchołek ma co najwyżej k-synów
-- ************************drzewo pełne************************ → drzewo, w którym wszystkie liście leżą na tym samym poziomie, a wszystkie wierzchołki wewnętrzne mają po k-synów
-- ********************drzewo zupełne (kompletne********************) → ma wszystkie poziomy prócz ostatniego całkowicie zapełnione, a ostatni jest zapełniony spójnie od lewej
-- ****************************************drzewo uporządkowane**************************************** → dla każdego wierzchołka wszystkie dzieci mają przypisany pewien porządek liniowy
+- ********głębokość wierzchołka —******** liczba wierzchołków, przez które należy przejść od korzenia
+- ********************************************wysokość wierzchołka******************************************** — maksymalna liczba wierzchołków do liścia
+- **************wysokość drzewa************** — maksymalna głębokość liścia - wysokość korzenia +1
+- **************************stopień wierzchołka —************************** liczba jego synów
+- ******************stopień drzewa****************** — maksymalny stopień wierzchołka
+- ******drzewo k-arne****** — drzewo w którym każdy wierzchołek ma co najwyżej k-synów
+- ************************drzewo pełne************************ — drzewo, w którym wszystkie liście leżą na tym samym poziomie, a wszystkie wierzchołki wewnętrzne mają po k-synów
+- ********************drzewo zupełne (kompletne********************) — ma wszystkie poziomy prócz ostatniego całkowicie zapełnione, a ostatni jest zapełniony spójnie od lewej
+- ****************************************drzewo uporządkowane**************************************** — dla każdego wierzchołka wszystkie dzieci mają przypisany pewien porządek liniowy
 
 ### Drzewo binarne
 
@@ -538,6 +538,6 @@ Drzewo jest **********************************************doskonale zrównoważo
 
 ### Trawersowanie drzew
 
-- PREorder → bieżący, lewy, prawy
-- POSTorder → lewy, prawy bieżący
-- INorder → lewy, bieżący, pracy
+- PREorder — bieżący, lewy, prawy
+- POSTorder — lewy, prawy bieżący
+- INorder — lewy, bieżący, pracy
