@@ -54,13 +54,41 @@ Rodzaje przerwań sprzętowych:
 * **Magistrala danych** — (DB) służy do przesyłania danych pomiędzy mikroprocesorem a pamięcią RAM.
 * **Magistrala adresowa** — (AB) służy do przesyłania adresów pamięci RAM.
 
+Ogólna architektura mikroprocesora z pamięcią RAM i ROM i I/O:
+
+![Architektura mikroprocesora](img/asyko/architektura_ogolna.png)
+
 Przykładowa architektura mikroprocesorowa Z80:
 
 ![Architektura Z80](https://upload.wikimedia.org/wikipedia/commons/d/db/Z80_arch.svg)
 
 ### Sposób wymiany informacji pomiędzy układami systemu mikroprocesorowego
 
- <!-- TODO -->
+> na podstawie procesora 8051
+
+#### Komunikacja z pamięcią RAM i ROM
+
+##### Legenda:
+
+* **OSC** — (Oscillator) rezonator kwarcowy, który generuje sygnał zegarowy, który synchronizuje pracę mikroprocesora.
+* **ALE** — (Address Latch Enable) sygnał zegarowy, który informuje pamięć o tym, że na magistrali adresowej znajduje się nowy adres.
+* **RD** — (Read) sygnał zegarowy, który informuje pamięć o tym, że mikroprocesor chce odczytać dane z pamięci.
+
+##### Odczyt
+
+* **RAM**:
+
+![Komunikacja z pamięcią RAM](img/asyko/odczyt_z_ramu.png)
+
+* **ROM** (Pobieranie kody pro):
+
+![Komunikacja z pamięcią ROM](img/asyko/odczyt_z_romu.png)
+
+##### Zapis
+
+* **RAM** i **I/O**:
+
+![Komunikacja z pamięcią ROM](img/asyko/zapis_do_ram_io.png)
 
 ## 55. Dekoder, multiplekser i demultiplekser: budowa, zasada, działania, przeznaczenie, zastosowanie
 
