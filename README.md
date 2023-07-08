@@ -2,7 +2,7 @@
 
 ## Podział mniej więcej na przedmioty
 
-* [x] [Matematyka](src/matematyka.md) 1-4 — <https://ashki23.github.io/markdown-latex.html>
+* [x] [Matematyka](src/matematyka.md) 1-4
 * [x] [Podstawowe informacje o programowaniu](src/podstawowe-informacje-o-programowaniu.md) 5-8
 * [x] [Sieci komputerowe](src/sieci.md) 9-13
 * [x] [Programowanie obiektowe](src/programowanie-obiektowe.md) 14-17

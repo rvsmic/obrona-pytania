@@ -1,5 +1,7 @@
 # Matematyka
+
 [`back to README.md`](../README.md)
+
 ## 1. Wektory i macierze – definicje i podstawowe operacje.
 
 ### Wektor

@@ -21,7 +21,8 @@
 				"bierner.markdown-preview-github-styles",
 				"DavidAnson.vscode-markdownlint",
 				"streetsidesoftware.code-spell-checker",
-				"streetsidesoftware.code-spell-checker-polish"
+				"streetsidesoftware.code-spell-checker-polish",
+				"bierner.github-markdown-preview"
 			]
 		}
 	},
