@@ -25,10 +25,10 @@ Polega na podziale rozwiązywanego problemu na podproblemy względem kilku param
     - wartość maksymalna lub minimalna, jaką mogą przyjąć elementy zbioru problemu
 - wraz ze wzrostem l. parametrów, wzrasta zapotrzebowanie na pamięć i moc obliczeniową
 
-<aside>
+<!-- <aside> -->
 > 💡 Zaprojektowany algorytm ma postać równania rekurencyjnego, opisującego optymalną funkcję celu tego problemu.
 
-</aside>
+<!-- </aside> -->
 
 Wyznaczenie wartości funkcji celu dla ostatniego podproblemu jest zazwyczaj wynikiem rozwiązania całego zagadnienia.
 
@@ -92,20 +92,20 @@ Jest to miara wyrażająca **ilość zasobów komputerowych** (*****************
 
 Jest to ilość pamięci jaką potrzebuje algorytm dla danych wejściowych o rozmiarze n.
 
-<aside>
+<!-- <aside> -->
 > 💡 Definicja rozmiaru danych wejściowych zależy od rozważanego problemu (sortowanie - liczba elementów do posortowania, mnożenie liczb całkowitych - liczba bitów potrzebnych do reprezentacji binarnej).
 W praktyce do obliczania złożoności pamięciowej nie uwzględnia się pamięci do odczytu na dane wejściowe i do zapisu na dane wyjściowe.
 
-</aside>
+<!-- </aside> -->
 
 ### Złożoność czasowa
 
 Jest to **************************liczba kroków************************** (elementarnych operacji), po jakich algorytm zatrzymuje się dla danych wejściowych o rozmiarze **n**.
 
-<aside>
+<!-- <aside> -->
 > 💡 Jest to własność samego algorytmu, niezależna od komputera czy języka programowa.
 
-</aside>
+<!-- </aside> -->
 
 ### Notacja O
 
@@ -145,10 +145,10 @@ Asymptotyczne ************************************ograniczenie dolne************
 
 ********************Abstrakcyjnym typem danych******************** nazywamy formalną specyfikację przechowywania obiektów oraz zbiór dobrze opisanych operacji na tych obiektach.
 
-<aside>
+<!-- <aside> -->
 > 💡 Struktura danych jest implementacją konkretnej abstrakcyjnej struktury danych.
 
-</aside>
+<!-- </aside> -->
 
 ### Przykłady stuktur
 
@@ -221,10 +221,10 @@ Asymptotyczne ************************************ograniczenie dolne************
 
 ![Bubble-sort-example-300px.gif](../src/img/algorytmy/Bubble-sort-example-300px.gif)
 
-<aside>
+<!-- <aside> -->
 > 💡 W i-tym przebiegu wyznaczamy i-ty najmniejszy/największy element zbioru oraz umieszczany jest na właściwej pozycji
 
-</aside>
+<!-- </aside> -->
 
 ### Złożoność czasowa: O(N^2)
 
@@ -264,10 +264,10 @@ Ulepszenie to zmniejsza tylko liczbę porównań, a nie liczbę potrzebnych prze
 3. Następnie odstęp zmniejsz, co powoduje powstanie nowych podzbiorów (będzie ich już mniej)
 4. Sortowanie powtórz i zmniejsz odstęp, aż osiągnie on wartość 1. Wtedy cały zbiór sortujemy typowym Insertion Sortem.
 
-<aside>
+<!-- <aside> -->
 > 💡 Dzięki początkowym, dużym odstępom, elementy były przesuwane w zbiorze bardziej efektywnie - na duże odległości.
 
-</aside>
+<!-- </aside> -->
 
 ### Złożoność czasowa
 
@@ -290,15 +290,15 @@ Czas pracy algorytmu jest niezależny od rodzaju danych wejściowych - złożono
 
 ## Opis strategii
 
-<aside>
+<!-- <aside> -->
 > 💡 Problem należy podzielić rekurencyjnie na dwa lub więcej podproblemów ********tego samego lub podobnego typu********. Rozwiązania uzyskane po wykonaniu algorytmów częściowych należy **scalić** w celu uzyskania rozwiązania ostatecznego.
 
-</aside>
+<!-- </aside> -->
 
-<aside>
+<!-- <aside> -->
 ❗ W przeciwieństwie do programowania dynamicznego, podproblemy, na które dzielimy problem są od siebie niezależne - rozważane, podzielone przypadki nie mają wpływu na siebie nawzajem, do momentu scalenia.
 
-</aside>
+<!-- </aside> -->
 
 ### Etapy pracy
 
@@ -378,10 +378,10 @@ Algorytm wyznacza rozwiązania w każdym kroku dokonując **zachłannego** (tj. 
 
 ![Dijkstra_Animation.gif](../src/img/algorytmy/Dijkstra_Animation.gif)
 
-<aside>
+<!-- <aside> -->
 ❗ Brak spojrzenia w przyszłość powoduje, że algorytmy zachłanne mogą nie znajdować optymalnych rozwiązań
 
-</aside>
+<!-- </aside> -->
 
 ### Przykłady
 
@@ -489,10 +489,10 @@ Złożoność pamięciowa O(|V| * |E|)
 3. Jeżeli cofając się znajdziemy wierzchołek sąsiadujący z nieodwiedzonym wierzchołkiem, odwiedzamy go i powtarzamy procedurę.
 4. Kontynuujemy dopóki nie odwiedzimy wszystkich wierzchołków.
 
-<aside>
+<!-- <aside> -->
 > 💡 Testowanie spójności grafu — jeżeli procedura wywołana dla pierwszego wierzchołka dotrze do wszystkich wierzchołków, to graf jest spójny.
 
-</aside>
+<!-- </aside> -->
 
 ### BFS - Breadth First Search - w szerz
 
