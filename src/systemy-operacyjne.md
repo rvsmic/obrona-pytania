@@ -234,6 +234,7 @@ i stronicowania.
 * Dzięki połączeniu technik segmentacji i stronicowania
   * można przydzielać procesom wiele segmentów, czy współdzielić segmenty unikająć fragmentacji zewnętrznej.
 
+
 ## 27. Organizacja systemu plików i pamięci zewnętrznej. 
 
 > Według jakiś prezek z neta
