@@ -538,6 +538,8 @@ Drzewo jest **********************************************doskonale zrównoważo
 
 ### Trawersowanie drzew
 
-- PREorder — bieżący, lewy, prawy
-- POSTorder — lewy, prawy bieżący
-- INorder — lewy, bieżący, pracy
+  ![preorder](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sorted_binary_tree_preorder.svg/899px-Sorted_binary_tree_preorder.svg.png)
+
+- PREorder — bieżący, lewy, prawy (F, B, A, D, C, E, G, I, H)
+- POSTorder — lewy, prawy bieżący (A, C, E, D, B, H, I, G, F)
+- INorder — lewy, bieżący, pracy (A, B, C, D, E, F, G, H, I)
