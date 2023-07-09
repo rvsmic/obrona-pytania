@@ -90,7 +90,7 @@ Dane wpisane w macierz nazywa się jej elementami, współczynnikami lub wyrazam
 
 #### Oznaczenia macierzy:
 
-* podmacierz macierzy — dowolny zbiór elementów macierzy powstały po skreśleniu pewnej liczby wierszy i kolumn
+* podmacierz macierzy — dowolny zbiór elementów macierzy powstały po skreśleniu pewnej liczby wierszy i/lub kolumn
   * podmacierze główne — są to podmacierze kwadratowe zawierające pewną liczbę początkowych wyrazów głównej przekątnej
 * Macierz klatkowa to macierz, w której wprowadzono podział elementów na grupy kolejnych wierszy i kolumn – obrazowo czyni się to, prowadząc poziome i pionowe linie między wierszami i kolumnami macierzy, dzieląc ją na podmacierze nazywane klatkami
 
