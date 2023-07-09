@@ -1,6 +1,20 @@
 # Wstęp do teorii obliczalności
+
 [`back to README.md`](../README.md)
+
 ## 44. Definicja funkcji obliczalnej (częściowo rekurencyjnej).
+
+### Funkcje obliczalna
+
+**Funkcja obliczalna** – funkcja, która może być obliczona przez maszynę Turinga. Czyli takie które można obliczyć używając urządzenia maszynowego (Maszyne Turinga, URM), mając nieskończenie wiele czasu i pamięci.
+
+Następujące modele obliczeń są równoważne:
+
+* Maszyna Turinga
+* URM
+* Lambda rachunek
+* Funkcje częściowo rekurencyjne
+
 ## Funkcje pierwotnie rekurencyjne
 
 Zbiór intuicyjnie obliczalnych funkcji opartych na teorii liczb, znanych jako **funkcje pierwotnie rekurencyjne** uzyskuje się z funkcji podstawowych i operatorów.
@@ -130,7 +144,18 @@ Dwa operatory to:
 1. Operator złożenia
 2. Operator rekursji prostej
 
+### Funkcje częściowo rekurencyjne
+
+Dodając do zbioru funkcji pierwotnie rekurencyjnych funkcje minimalizacji otrzymujemy zbiór funkcji częściowo rekurencyjnych.
+
+#### Funkcja minimalizacji
+
+Dla funkcji $f: \mathbb{N}^{n+1} \rightarrow \mathbb{N}$, definiujemy funkcję $h: \mathbb{N}^n \rightarrow \mathbb{N}$, w taki sposób, żę wartość $h(m_1, m_2, ..., m_n)$ jest minimalne $y$ takie, że $f(m_1, m_2, ..., m_n, y) = 0$.
+
+Ponieważ nie dla wszystkich $m_1, m_2, ..., m_n$ istnieje takie $y$, że $f(m_1, m_2, ..., m_n, y) = 0$, to funkcje częściowe rekurencyjne mogą być częściowe.
+
 ## 45. Maszyna Turinga jako model procesów obliczalnych.
+
 ## Jednotaśmowa maszyna Turinga
 
 **Maszyna Turinga M** jest to siódemka uporządkowana
