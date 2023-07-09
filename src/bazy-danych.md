@@ -163,7 +163,160 @@ Instrukcje SQL w obrębie zapytań tradycyjnie zapisywane są wielkimi literami,
     * `LEAST(e1, e2, ..., en)`
     * `NVL(e1, e2)` — zwraca e1, jeśli nie jest NULL, w przeciwnym razie zwraca e2
     * `NVL2(e1, e2, e3)` — zwraca e2, jeśli e1 nie jest NULL, w przeciwnym razie zwraca e3
+* funkcja agregująca (wcześniej znana jako funkcja kolumnowa) — funkcja, która zwraca pojedynczą wartość skalarną (wynik podsumiwujący), która jest wynikiem obliczeń na zestawie danych
+  * `AVG(e)`
+  * `COUNT(e)`
+  * `MAX(e)`
+  * `MIN(e)`
+  * `SUM(e)`
+  * `First(e)`
+  * `Last(e)`
+  * `MEDIAN(e)`
+  * `STDDEV(e)` — odchylenie standardowe
+  * `VARIANCE(e)` w MYSQL — wariancja
+* `GROUP BY` — klauzula umożliwiająca grupowanie wyników zapytania
+  * `GROUP BY` musi wystąpić po `WHERE`
+  * W `SELECT` mogą wystąpić tylko kolumny z `GROUP BY`, funkcje agregujące lub wyrażenia stałe
   
+  `SELECT dept_id, SUM(salary), `
+
+  `FROM emp`
+
+  `WHERE title = 'Warehouse Manager'`
+
+  `GROUP BY dept_id;`
+
+* `HAVING` — klauzula umożliwiająca filtrowanie wyników zapytania po grupowaniu
+  * `HAVING` musi wystąpić po `GROUP BY`
+  
+  `SELECT title, SUM(salary)`
+
+  `FROM emp`
+
+  `GROUP BY title`
+
+  `HAVING SUM(salary) > 10000;`
+
+* `ORDER BY` — klauzula umożliwiająca sortowanie wyników zapytania
+
+### Złączenia tabel
+
+* `CROSS JOIN` — iloczyn kartezjański, każdy z każdym, liczba rekordów wyniku to iloczyn liczby rekordów w tabelach
+
+  `SELECT E.name, D.lastname`
+
+  `FROM emp E, dept D;`
+
+* `INNER JOIN` (Equi Join) — złączenie równościowe, użycie kolumny wiążącej
+  
+    `SELECT E.name, D.lastname`
+  
+    `FROM emp E, dept D`
+  
+    `WHERE E.dept_id = D.dept_id;`
+
+* `THETA JOIN` — złączenia nierównościowe, złączenie releacji, które nie mają kolumny wiążącej
+  
+    `SELECT E.name, D.lastname`
+  
+    `FROM emp E, dept D`
+  
+    `WHERE E.salary BETWEEN D.salary_min AND D.salary_max;`
+
+
+* `SELF-JOIN` — złączenie zwrotne
+  
+    `SELECT E1.name, E2.lastname`
+  
+    `FROM emp E1, emp E2`
+  
+    `WHERE E1.manager_id = ED.id;`
+
+    wyświetla imię pracownika i nazwisko jego menadżera
+
+* `FULL OUTER JOIN` — złączenie zewnętrzne
+
+    `SELECT D.id, D.name, E.first_name, E.last_name`
+    
+    `FROM dept D`
+    
+    `FULL OUTER JOIN emp E on D.id = E.dept_id`
+
+
+    wyświetla działy, które mają pracowników i przypisanch do nich pracowników, a także wszystkie działy bez pracowników oraz pracowników nieprzypisanych do działu
+
+    * `LEFT JOIN`
+
+    `SELECT D.id, D.name, E.first_name, E.last_name`
+    
+    `FROM dept D`
+    
+    `LEFT OUTER JOIN emp E on D.id = E.dept_id`
+
+    
+    Wyświetla wszystkie działy (nawet nie mających pracowników) i przypisanych do nich pracowników lub null
+
+    
+    * `RIGHT JOIN`
+
+  
+    `SELECT D.id, D.name, E.first_name, E.last_name`
+    
+    `FROM dept D`
+    
+    `RIGHT OUTER JOIN emp E on D.id = E.dept_id`
+
+    Wyświetla działy, które mają przypisanych pracowników i wszystkich pracowników, niezależnie czy są przypisani do działu
+
+
+* `UNION` — złącza dwie table, bez powtórzeń
+
+    `SELECT name FROM emp`
+    
+    `UNION`
+    
+    `SELECT name FROM dept;`
+
+* `UNION ALL` — złącza dwie table, z powtórzeniami
+  
+      `SELECT name FROM emp`
+      
+      `UNION ALL`
+      
+      `SELECT name FROM dept;`
+
+* `INTERSECT` — zwraca powtarzające się rekordy z dwóch tabel
+
+    `SELECT name FROM emp`
+    
+    `INTERSECT`
+    
+    `SELECT name FROM dept;`
+
+* `EXISTS` — sprawdza czy podzapytanie zwraca jakieś rekordy
+
+    `SELECT name FROM emp`
+    
+    `WHERE EXISTS (SELECT * FROM dept WHERE dept.id = emp.dept_id);`
+
+* `NOT EXISTS` — sprawdza czy podzapytanie nie zwraca żadnych rekordów
+
+    `SELECT name FROM emp`
+    
+    `WHERE NOT EXISTS (SELECT * FROM dept WHERE dept.id = emp.dept_id);`
+
+* `ANY` — sprawdza czy wartość jest np. większa od jakiejkolwiek wartości z podzapytania, musi być połączone z jakimś operatorem porównania
+
+    `SELECT name FROM emp`
+    
+    `WHERE salary > ANY (SELECT salary FROM dept);`
+
+* `ALL` — sprawdza czy wartość jest np. większa od wszystkich wartości z podzapytania, musi być połączone z jakimś operatorem porównania
+
+    `SELECT name FROM emp`
+    
+    `WHERE salary > ALL (SELECT salary FROM dept);`
+
 ## 38. Transakcje w bazach danych. 
 Transakcja w bazie danych — seria jednej lub więcej operacji wykonywanych jako pojedyncza, atomowa jednostka pracy (albo wszystkie operacje w transakcji zostaną zakończone sukcesem, albo żadna z nich nie zostanie zastosowana w bazie danych). Transakcje są wykorzystywane do zapewnienia spójności i integralności danych poprzez zapewnienie, że baza danych pozostaje spójna nawet w przypadku awarii systemu lub błędów. Są niezbędne do umożliwienia współbieżnego dostępu, zapewnienia atomowości,  odzyskiwania danych oraz zapewnienia właściwości ACID.
 
