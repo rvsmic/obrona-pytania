@@ -42,7 +42,7 @@ $a= \alpha_1 \vec{e}_1 + \alpha_2 \vec{e}_2 + \alpha_3 \vec{e}_3$
   
   $||\vec{a}|| = \sqrt{a_1^2 + a_2^2 + a_3^2}$
   
-  lub erwiastkowi kwadratowemu z iloczynu skalarnego wektora przez siebie:
+  lub pierwiastkowi kwadratowemu z iloczynu skalarnego wektora przez siebie:
 
   $||\vec{a}|| = \sqrt{\vec{a} \cdot \vec{a}}$
 * iloczyn skalarny (iloczyn wewnętrzny) — wynikiem skalar
