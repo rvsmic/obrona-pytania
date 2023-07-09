@@ -227,7 +227,7 @@ Dwa podejścia:
 Ogólna postać klauzuli Horna: $\overline{p_1}\lor\overline{p_2}\lor\overline{p_3}\lor q$, co można przeprowadzić do postaci równoważnej $(\overline{p_1}\lor\overline{p_2}\lor\overline{p_3}\lor q) \iff (\overline{p_1}\land\overline{p_2}\land\overline{p_3} \Rightarrow q)$.
 
 W prologu klauzule Horne'a są zapisywane w postaci:
-`q:-p1,p2,p3.` co znaczy 'q jest prawdziwe, jeśli p1, p2 i p3 są prawdziwe'.
+`q:-p1,p2,p3.` co znaczy `q jest prawdziwe, jeśli p1, p2 i p3 są prawdziwe`.
 
 ### Nawracanie
 
