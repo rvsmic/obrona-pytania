@@ -82,9 +82,36 @@ W modelu kaskadowym fazy rozwoju oprogramowania następują sekwencyjnie, aby pr
 
 ## 40. Metodyki zwinne – SCRUM
 
+**Programowanie zwinne** (ang. agile software development) – zbiór metodologii tworzenia oprogramowania, które opierają się na iteracyjno-przyrostowym rozwoju produktu.
 
+### SCRUM
 
-Inne niż SCRUM
+**SCRUM** — iteracyjne i przyrostowe ramy zarządzania procesem produkcyjnym (ang. framework) zgodne ze Scrum Guide. Nie jest to metodyka zwinna, ale są to ramy postępowania (framework), nie ma "dwóch" zespołów pracujących w identycznym scrumie.
+
+* może mieć zastowowani w realizacji procesów produkcyjnych w oparciu o metodyki zwinne
+
+* fundamenty SCRUM:
+    * **inspection** — inspekcja, uważne przyglądanie się rzeczywistości, np. potrzebom klienta
+    * **adaptation** — adaptacja, na podstawie obserwacji podejmowane odpowiednie działania
+    * **transparency** — przejrzystość, dzięki niej można podejmować decyzje na podstawie faktów (rzeczywistego a nie zafałszowanego obrazu rzeczywistości), a nie domysłów
+* **Scrum Team**
+    * samozarządzający sie zespół — organizacja stawia cel, zespół sam decyduje jak go osiągnąć
+    * role w zespole:
+        * **Product Owner** — właściciel produktu, osoba odpowiedzialna za wizję, wartość produktu i decyzje o kierunku rozwoju, odpowiada, żeby produkt był zgodny z wymaganiami klienta
+        * **Scrum Master** — osoba odpowiedzialna za to, żeby zespół pracował produktywnie, pomaga zespołowi osiągnąć lepsze rezultaty
+        * wykonawcy — osoby, które tworzą produkt
+* działanie
+    * zespól pracuje w **Sprintach** (iteracjach) o określonej długości (zwykle od 1 do 4 tygodni, zaleca się stosowanie sprintów stałej długości); zmiany w każdym Sprintcie powinny wnosić zauważalną nową wartość funkcjonalną 
+    * na początku wszystko co jest do zrobienia jest umieszczane w **Product Backlog** (aktualizaowany i porządkowany przez Product Ownera)
+    * następnie zespół planuje **Sprint** (planowanie podczas **Sprint Planning**, plan działania jest umieszczany w **Sprint Backlog**, do którego wszyscy mają dostęp — transparencja)
+    * **Daily Scrum** — krótkie, codzinne spotkania zespołu,na których sprawdzane jest czy plan ciągle aktualny i jeśli trzeba to podejowane są działania (inspekcja i adaptacja)
+    * **Sprint Review** — spotkanie zespołu na koniec Sprintu, przedstawienie efektów pracy zainteresowanym osobom i na podstawie feedbacku podejmowane decyzje o dalszych etapach prac (inspekcja i adaptacja) 
+    * **Sprint Retrospective** — spotkanie zespołu po Sprint Review, na którym zespół analizuje swoją pracę i podejmuje decyzje o poprawie procesu (inspekcja i adaptacja sposobu pracy); pomaga w tym Scrum Master
+
+    
+    
+
+### Inne metodyki zwinne
 
 * XP (Extreme Programming)
     * programista w centrum
