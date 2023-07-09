@@ -123,7 +123,8 @@ W modelu kaskadowym fazy rozwoju oprogramowania następują sekwencyjnie, aby pr
     * najpierwt testy, potem implementacja, potem refaktoryzacja
 
     ![Test-driven development (TDD)](/src/img/io/metodyki/tdd.png)
-## 41. Testowanie oprogramowania.
+
+## 41. Testowanie oprogramowania
 
 **Testowanie** — ma na celu weryfikację i walidację oprogramowania.
 
@@ -244,12 +245,225 @@ używa narzędzi pomocniczych do testowania aplikacji
 * klasa abstrakcyjna — nie może być instancjonowana (*nazwa klasy kursywą*)
 * metaklasa — ma zestaw metod, które odpowiadają podstawowym operacjom klasy, takim jak: sposób tworzenia obiektów, destrukcja obiektów, wywoływanie metod, stosowanie mechanizmów dziedziczenia, przypisywanie wartości atrybutom, uzyskiwanie dostępu do atrybutów, mechanizmy posługiwania się wskaźnikami `this(self)`
 * klasy aktywne — mogą być źródłem procesu lub wątku
+
 ![Klasa aktywna](/src/img/io/dia_klas/klasa_aktywna.png)
+
+**Inne**
+
+* interfejs — operacje bez implementacji, niekoniecznie wszystkie
+
+![Interfejs](/src/img/io/dia_klas/interfejs.png)
+
+* struktury i typ wyliczeniowy
+
+![Struktury i typ wyliczeniowy](/src/img/io/dia_klas/struct_enum.png)
+
+* wzorzec klas (szablon klas)
+
+![szablon](/src/img/io/dia_klas/szablon.png)
 
 **Związki między klasami:**
 
 * generalizacja — relacja dziedziczenia (dziedziczenie to implementacja generalizacji)
+
 ![Dziedziczenie](/src/img/io/dia_klas/dziedziczenie.png)
+
+* zależność —  obiekty jednego
+typu są funkcyjnie zależne od obiektów innego typu, zależność np. gdy inna klasa jako argument funkcji, w ciele funkcji
+
+![Zależność](/src/img/io/dia_klas/zaleznosc.png)
+
+* zależność klas zaprzyjaźnionych — dostęp do prywatnych składowych klasy 
+
+![Klasa zaprzyjazniona](/src/img/io/dia_klas/friend.png)
+
+* powiązanie (asocjacja) —  obiekty  jednego typu są połączone z obiektami innego typu poprzez atrybuty danych klas
+
+![Asocjacja](/src/img/io/dia_klas/asocjacja.png)
+
+* klasa powiązania — forma przejściowa między powiązaniem a klasą, pozwalająca na dodanie właściwości do powiązania
+
+![klasa powiązania](/src/img/io/dia_klas/klasa_powiazana.png)
+
+* powiązanie kwalifikowane — powiązanie z możliwością określenia kwalifikatora (atrybutu decydującego o związku między klasami)
+
+![powiązanie kwalifikowane](/src/img/io/dia_klas/powiazanie_kwalifikowane.png)
+
+* agregacja prosta — związek rodzaju *całość-część*
+
+![agregacja prosta](/src/img/io/dia_klas/agregacja_prosta.png)
+
+* agregacja całkowita (kompozycja) — związek rodzaju *całość-część*, w których części są tworzone i zarządzane przez obiekt reprezentujący całość. Ani całość, ani części nie mogą istnieć bez siebie, dlatego czasy ich istnienia są bardzo ściśle ze sobą związane i pokrywają się: w momencie usunięcie obiektu całości obiekty części są również usuwane.
+
+![Kompozycja](/src/img/io/dia_klas/kompozycja.png)
+
+* liczbebność powiązań
+
+![Liczebność powiązań](/src/img/io/dia_klas/liczebnosc.png)
+
+### Diagram czynności
+
+* wykorzystywane podczas aporządzania analizy systemu
+* do modelowania przepłuwu sterowania między wykonywanymi czynnościami
+
+* ogólny diagram czynności
+
+![Diagram czynności](/src/img/io/dia_czynnosci/dia_czynnosci.png)
+
+* przykład szczegółowego diagramu czynności
+
+![Diagram czynności szczegłówy](/src/img/io/dia_czynnosci/szczegolowy.png)
+
+* wyjątki
+
+![Wyjątki](/src/img/io/dia_czynnosci/exception.png)
+
+* ścieżki współbieżne
+
+![Ścieżki współbieżne](/src/img/io/dia_czynnosci/sciezki_wspolbiezne.png)
+
+* zakres odpowiedzialności
+
+![Zakres odpowiedzialności](/src/img/io/dia_czynnosci/zakres_odpowiedzialnosci.png)
+
+### Diagram obiektów
+
+* **obiekt** — instancja klasy
+
+![Rodzaje obiektów](/src/img/io/dia_obiektow/rodzaje_obiektow.png)
+
+* nazwa obiektu: nazwa klasy (podkreślone)
+* obiekt anonimowy — bez nazwy
+* obiekt aktywny — inicjuje działanie innych obiektów, implementacyjnie odwzorowany jako osobny wątek lub proces
+* obiekty wielokrotne
+
+![Obiekty wielokrotne](/src/img/io/dia_obiektow/obiekty_wielokrotne.png)
+
+### Diagramy stanów
+
+* obrazują sposób zmiany stanów obiektu w czasie w odpowiedzi na zdarzenia i interakcje
+
+![Diagram stanu](/src/img/io/dia_stanu/dia_stanu.png)
+
+Ogólny diagram stanów systemu budowanego kontrolera temperatury
+![Ogólny diagram stanów systemu budowanego kontrolera temperatury](/src/img/io/dia_stanu/dia_stanu_temp.png)
+
+Podstany współbieżne
+
+![Podstany współbieżne](/src/img/io/dia_stanu/wspolbiezne.png)
+
+Przejścia alternatywne
+
+![Przejścia alternatywne](/src/img/io/dia_stanu/alternatywne.png)
+
+### Diagramy sekwencji (przebiegu)
+
+* obrazują interakcje między obiektami w czasie
+* składa się z:
+    * obiektów
+    * komunikatów
+        * streotypy `<<create>>`, `<<destroy>>`
+        * rodzaje
+            * synchroniczny — oczekuje na zakończenie wykonania żądania
+
+            ![Synchroniczny](/src/img/io/dia_przebiegu/synchroniczny.png)
+            
+            * zwrotny — jako jeden z parametrów adres obiektu wywołującego, aby w trakcie lub po wykonaniu żądania mógł komunikować się z obiektem wywołującym
+
+            ![Zwrotny](/src/img/io/dia_przebiegu/zwrotny.png)
+
+            * asynchroniczny — sterowanie wraca natychmiast po wywołaniu, często realizowane jako metody typu `callback()`
+
+            ![Asynchroniczny](/src/img/io/dia_przebiegu/asynchroniczny.png)
+
+    * osi czasu (lini życia)
+
+![Diagram 1](/src/img/io/dia_przebiegu/dia_1.png)
+
+Rekurencja
+
+![Rekurencja](/src/img/io/dia_przebiegu/rekurencja.png)
+
+Przykład
+![Diagram 2](/src/img/io/dia_przebiegu/dia_2.png)
+
+
+Przykład z operatorami interakcji (np. loop, alt, opt, seq)
+
+![Diagram 3](/src/img/io/dia_przebiegu/dia_3.png)
+
+### Diagramy komunikacji (kooperacji)
+
+* pozwalają wymodelować interacje między obiektami lub/i pomiędzy użytkownikiem systemu i obiektami
+* nie w czasie
+
+![Diagram 1](/src/img/io/dia_kooperacji/dia_1.png)
+
+![Diagram 2](/src/img/io/dia_kooperacji/dia_2.png)
+
+* obiekty wielokrotne
+    * komunikat do wszystkich obiektów
+
+![komunikat do wszystkich obiektów](/src/img/io/dia_kooperacji/dia_3.png)
+
+    * komunikat do wszystkich — ważna kolejność
+
+![komunikat do wszystkich — ważna kolejność](img/io/dia_kooperacji/dia_4.png)
+
+### Diagram współpracy
+
+* pozwalają na modelowanie interakcji między obiektami w otoczeniu i pojakazują ogólną organizację obiektów uczestniczących w interakcji
+
+
+![Diagram 1](/src/img/io/dia_wspolpracy/dia_1.png)
+
+![Diagram 2](/src/img/io/dia_wspolpracy/dia_2.png)
+
+### Komponenty
+
+* **komponent** — grupa klas pozostających ze sobą w dobrze zdefiniowanych relacjach (dziedziczenie, powiązania, zależności), i służących jednemu, konkretnemu celowi
+
+![komponent](/src/img/io/komponenty/komponent.png)
+
+* komunikują się ze sobą za pomocą interfejsów
+
+![interfejs i komponenty](/src/img/io/komponenty/interf_komp.png)
+
+Przykładowa struktura komponentów
+
+![Struktura](/src/img/io/komponenty/struktura.png)
+
+### Pakiety
+
+* **pakiet** — służy do grupowania i systematyzowania składników modelu o podobnym przeznaczeniu we wspólnej przestrzeni nazw
+
+![Pakiet](/src/img/io/pakiet.png)
+
+![Pakiety](/src/img/io/pakiety.png)
+
+### Diagram wdrożenia
+
+* służy do zobrazowania fizycznej architektury projektowanego systemu
+* podstawowym elementem diagramu wdrożenia jest węzeł
+
+![Diagram wdrożenia](/src/img/io/dia_wdrozenia.png)
+
+![Diagram wdrozenia 2](/src/img/io/dia_wdrozenia2.png)
+
+### Diagram harmonogramowania
+
+* opisują interakcje obiektu stworzonego na bazie klasy w aspekcie czasu trwania sekwencji zmian wartości w czasie (stanu), jaki obiekt może przyjmować
+
+Przykład dla obiektu anonimowego
+
+![Diagram harmonogramowania](/src/img/io/dia_harm.png)
+
+### Relacje wyrażanie (manifest) elementów logicznych przez elementy fizyczne
+
+* standardowo klasa powinna mieć swój pplik nagłówkowy i jeśli to konieczne plik źródłowy
+
+![Manifest](/src/img/io/manifest.png)
+
 ## 43. Wzorce projektowe programowania obiektowego
 
 *Każdy wzorzec opisuje
