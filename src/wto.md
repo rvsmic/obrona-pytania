@@ -1,7 +1,6 @@
 # Wstęp do teorii obliczalności
 [`back to README.md`](../README.md)
 ## 44. Definicja funkcji obliczalnej (częściowo rekurencyjnej).
-# 44. Definicja funkcji obliczalnej (częściowo rekurencyjnej).
 ## Funkcje pierwotnie rekurencyjne
 
 Zbiór intuicyjnie obliczalnych funkcji opartych na teorii liczb, znanych jako **funkcje pierwotnie rekurencyjne** uzyskuje się z funkcji podstawowych i operatorów.
@@ -132,6 +131,75 @@ Dwa operatory to:
 2. Operator rekursji prostej
 
 ## 45. Maszyna Turinga jako model procesów obliczalnych.
+## Jednotaśmowa maszyna Turinga
+
+**Maszyna Turinga M** jest to siódemka uporządkowana
+
+$$
+M = (Q, \Sigma, \Gamma, \delta, q_0, \bigtriangledown, F)
+$$
+
+gdzie:
+
+1. $Q$ jest skończonym **zbiorem stanów** sterowania skończonego.
+2. $\Sigma$ jest skończonym **zbiorem symboli wejściowych (alfabetem)**, mamy $\Sigma \subset \Gamma$.
+3. $\Gamma$ jest skończonym **zbiorem dopuszczalnych symboli taśmy**, mamy $\Gamma = \Sigma \ \cup \ \bigtriangledown$
+4. Funkcja $\delta$ jest dana przez $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times D$, gdzie D jest zbiorem możliwych kierunków głowicy.
+Możemy zapisać
+    
+    $$
+    \delta (p, x) = (q,y,d)
+    $$
+    
+    gdzie: 
+    
+    - stany $p,g \in Q$
+    - $x,y$ - symbol odczytywany i zapisywany do komórki
+    - $d \in D$ - kierunek głowicy
+    
+    W podstawowej wersji maszyny Turinga, podanej przez Hopcrofta i Ullmana, głowica może przesuwać się w lewo lub w prawo, co oznaczamy przez ← i →, czyli $D =\{\leftarrow,\rightarrow\}$.
+    W innej wersji maszyny Turinga głowica dodatkowo może stać w miejscu, 
+    co oznaczamy przez —, czyli zbiór $D = \{\leftarrow, -, \rightarrow\}$.
+    Jeśli funkcja przejścia nie jest zdefiniowana na bieżącym stanie i bieżącym symbolu taśmy, to maszyna zatrzymuje się.
+    
+5. $q_0$ jest to **stan początkowy**, czyli stan, w którym znajduje się sterowanie skończone na starcie
+6. $\bigtriangledown$ jest to **symbol pusty (blank).** Symbol pusty znajduje się we wszystkich komórkach taśmy poza skończoną ilością komórek, które zawierają symbole wejściowe.
+7. $F$ jest to zbiór **stanów akceptujących** i jest nazywany też zbioerm **stanów końcowych** $F \subset Q$
+
+### Definicja maszyny Turinga podana przez J.Myckę
+
+(J. Mycka) **Maszyna Turinga M** jest to siódemka uporządkowana
+
+$$
+M = (Q, \Sigma, \Gamma, \delta, q_0, q_A, q_R)
+$$
+
+gdzie:
+
+1. $Q$ jest skończonym **zbiorem stanów** sterowania skończonego.
+2. $\Sigma$ jest skończonym **zbiorem symboli wejściowych (alfabetem)**, mamy $\Sigma \subset \Gamma$.
+3. $\Gamma$ jest skończonym **zbiorem dopuszczalnych symboli taśmy**, mamy $\Gamma = \Sigma \ \cup \ \bigtriangledown$
+4. Funkcja $\delta$ jest dana przez $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times D$, gdzie D jest zbiorem możliwych kierunków głowicy.
+Możemy zapisać
+    
+    $$
+    \delta (p, x) = (q,y,d)
+    $$
+    
+    gdzie: 
+    
+    - stany $p,g \in Q$
+    - $x,y$ - symbol odczytywany i zapisywany do komórki
+    - $d \in D$ - kierunek głowicy
+    
+    W podstawowej wersji maszyny Turinga, podanej przez Hopcrofta i Ullmana, głowica może przesuwać się w lewo lub w prawo, co oznaczamy przez ← i →, czyli $D =\{\leftarrow,\rightarrow\}$.
+    W innej wersji maszyny Turinga głowica dodatkowo może stać w miejscu, 
+    co oznaczamy przez —, czyli zbiór $D = \{\leftarrow, -, \rightarrow\}$.
+    Jeśli funkcja przejścia nie jest zdefiniowana na bieżącym stanie i bieżącym symbolu taśmy, to maszyna zatrzymuje się.
+    
+5. $q_0$ jest to **stan początkowy**, czyli stan, w którym znajduje się sterowanie skończone na starcie
+6. $q_A$ jest to **stan akceptujący**
+7. $q_R$ jest to **stan odrzucający**
 ## 46. Zagadnienia nierostrzygalne w kontekście obliczalności.
 
 ### Problem nierozstrzygalny
