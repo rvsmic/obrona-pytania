@@ -89,9 +89,9 @@ reprezentowanym przez zmienną będącą głową.
 
 Można to zapisać w sposób zwarty:
 
-* $T \neq\empty$
+* $T \neq\emptyset$
 * $S\in V$
-* $T \cap V=\empty$
+* $T \cap V=\emptyset$
 * $P\subset V\times (T\cup V)^*$
 
 ### Gramatyka
