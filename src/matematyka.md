@@ -44,10 +44,10 @@ $a= \alpha_1 \vec{e}_1 + \alpha_2 \vec{e}_2 + \alpha_3 \vec{e}_3$
   
   lub pierwiastkowi kwadratowemu z iloczynu skalarnego wektora przez siebie:
 
-  $||\vec{a}|| = \sqrt{\vec{a} \cdot \vec{a}}$
+  $||\vec{a}|| = \sqrt{\vec{a} \circ \vec{a}}$
 * iloczyn skalarny (iloczyn wewnętrzny) — wynikiem skalar
 
-  $\vec{a} \cdot \vec{b} = ||\vec{a}|| \cdot ||\vec{b}|| \cdot cos \theta$
+  $\vec{a} \circ \vec{b} = ||\vec{a}|| \cdot ||\vec{b}|| \cdot cos \theta$
 
   gdzie $\theta$ jest kątem między wektorami $\vec{a}$ i $\vec{b}$.
 * iloczyn wektorowy (iloczyn zewnętrzny) — ma sens jedynie w 3 wymiarach; wynikiem wektor
