@@ -73,7 +73,7 @@ Rodzaje klas:
 **Dziedziczenie** — mechanizm, który pozwala na tworzenie nowych klas na podstawie już istniejących.
 Klasa, która jest podstawą do stworzenia nowej klasy nazywamy **klasą bazową**.
 Klasa, która jest tworzona na podstawie klasy bazowej nazywamy **klasą pochodną**.
-Klasa pochodna dziedziczy po klasie bazowej jej atrybuty i metody.
+Klasa pochodna dziedziczy po klasie bazowej jej atrybuty i metody (nie ma dostępu do zmiennych i metod prywatnych klasy bazowej w Javie).
 Klasa pochodna może rozszerzać funkcjonalność klasy bazowej poprzez dodanie nowych atrybutów i metod.
 Klasa pochodna może nadpisywać metody klasy bazowej.
 Klasa pochodna może być bazą dla kolejnej klasy pochodnej. Dziedziczenie jest realizowane przez słowo kluczowe `extends`.
