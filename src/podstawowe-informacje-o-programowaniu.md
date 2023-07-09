@@ -57,6 +57,10 @@ Aby z systemu o podstawie $n$ przekonwertować na system o podstawie $m$ można 
   * znak = 0 bo liczba dodatnia
   * wykładnik = 3 + 127 = 130 = 10000010 (wykładnik + 127 na binarny)
   * mantysa = 10011000000000000000000 (przed przecinkiem zawsze 1 (pomija się) a reszta to część ułamkowa)
+  * Reprezentacja zmiennoprzecinkowa IEEE-754 single
+  ![Zmiennoprzecnikowa](/src/img/podstawy/zmienno.png)
+* gdy konwertujemy na liczbę zmiennoprzecinkową podwójnej precyzji gdzie wykładnik ma 11 bitów a mantysa 52, a przsunięcie wynosi 1023 a nie 130
+* długość słowa, wykładnika (cechy), mantysy może się różnić w zależnośći od formatu; powyżej zostało zaprezentowane dla IEEE 754
 
 ## 7. Typ, zmienna, obiekt i zarządzanie pamięcią
 
