@@ -64,23 +64,35 @@ Przykładowa architektura mikroprocesorowa Z80:
 
 ### Sposób wymiany informacji pomiędzy układami systemu mikroprocesorowego
 
-> na podstawie procesora 8051
+<!-- TODO: W przyszłości naklezy rozpisać to dokładniej  -->
+
+> na podstawie procesora 8051 i [strony *asyko*](http://liza.umcs.lublin.pl/~skotyra/)
+>
+> Dokładny opis znajduje się [tutaj](http://informatyka.umcs.lublin.pl/files/kotlinski.pdf), na stronie *18*
 
 #### Komunikacja z pamięcią RAM i ROM
 
-##### Legenda:
+##### Legenda
 
 * **OSC** — (Oscillator) rezonator kwarcowy, który generuje sygnał zegarowy, który synchronizuje pracę mikroprocesora.
 * **ALE** — (Address Latch Enable) sygnał zegarowy, który informuje pamięć o tym, że na magistrali adresowej znajduje się nowy adres.
 * **RD** — (Read) sygnał zegarowy, który informuje pamięć o tym, że mikroprocesor chce odczytać dane z pamięci.
+* **PSEN** — (Program Store Enable) sygnał zegarowy, który informuje pamięć o tym, że mikroprocesor chce odczytać kod programu z pamięci.
+* **WR** — (Write) sygnał zegarowy, który informuje pamięć o tym, że mikroprocesor chce zapisać dane do pamięci.
+* **P0** — (Port 0) port uniwersalny, który służy do wymiany informacji pomiędzy mikroprocesorem a urządzeniami zewnętrznymi. W tym wypadku to szyna danych.
+* **RP** — (Read/Program) sygnał zegarowy, który informuje pamięć o tym, że mikroprocesor chce odczytać dane z pamięci lub kod programu z pamięci.
+* **P2** — (Port 2) port uniwersalny, który służy do wymiany informacji pomiędzy mikroprocesorem a urządzeniami zewnętrznymi. W tym wypadku to szyna adresowa.
 
+* **DA** — dekoder adresów, który wybiera pamięć RAM lub ROM na podstawie adresu.
+* **RP** — ???
+  
 ##### Odczyt
 
 * **RAM**:
 
 ![Komunikacja z pamięcią RAM](img/asyko/odczyt_z_ramu.png)
 
-* **ROM** (Pobieranie kody pro):
+* **ROM** (Pobieranie kody programu):
 
 ![Komunikacja z pamięcią ROM](img/asyko/odczyt_z_romu.png)
 
