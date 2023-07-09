@@ -11,8 +11,8 @@
 * [x] [Asyko, wbudowane](src/asyko-systemy-wbudowane.md) 28-29
 * [x] [AI](src/ai.md) 30-33
 * [x] [Bazy danych](src/bazy-danych.md) 34-38
-* [ ] [Inżynieria oprogramowania](src/inzynieria-oprogramowania.md) 39-43
-* [ ] [WTO](src/wto.md) 44-46-47(algosy)
+* [x] [Inżynieria oprogramowania](src/inzynieria-oprogramowania.md) 39-43
+* [x] [WTO](src/wto.md) 44-46-47(algosy)
 * [x] [Paradygmaty](src/paradygmaty.md) 48-53
 * [x] [Asyko & wbudowane2](src/asyko-systemy-wbudowane.md) 54-57
 * [x] [Programowanie aplikacji sieciowych](src/programowanie-aplikacji-sieciowych.md) 58-62
