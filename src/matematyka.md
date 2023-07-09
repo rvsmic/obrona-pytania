@@ -194,6 +194,7 @@ Dodatkowo w niektórych zastosowaniach wymagane:
 ### Przykłady
 
 * ciąg Fibonacciego
+
 $$
 F_n=
 \begin{cases}
@@ -202,7 +203,9 @@ F_n=
 F_{n-2}+F_{n-1} & \quad \text{dla }n>1
 \end{cases}
 $$
+
 * definicja silni
+
 $$
 F_n=
 \begin{cases}
@@ -210,7 +213,9 @@ F_n=
 nF_{n-1} & \quad \text{dla }n\geq1
 \end{cases}
 $$
+
 * funkcja Ackermanna
+
 $$
 A(m,n)=
 \begin{cases}
