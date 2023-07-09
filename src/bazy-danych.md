@@ -4,7 +4,7 @@
 Postać normalna — postać relacji w bazie danych, w której nie występuje redundancja (nadmiarowość), czyli powtarzanie się tych samych informacji. Doprowadzenie relacji do postaci normalnej nazywa się normalizacją (lub dekompozycją) bazy danych. Wyróżnia się następujace postacie normalne 1NF, 2NF, 3NF, BCNF (Boyce’a-Codda), 4NF i 5NF. 4NF i 5NF w zasadzie wyłącznie w rozważaniach teoretycznych.
 * Pierwsza postać normalna (1NF) 
     * relacja opisuje jeden obiekt
-    * zdefiniowany klucze relacji
+    * zdefiniowane klucze relacji (*Klucz główny* – wybrany minimalny zestaw atrybutów relacji, jednoznacznie identyfikujący każdy rekord tej relacji)
     * atrybuty niekluczowe są w zależności funkcyjnej od klucza
     * wartości atrybutów są elementarne (atomowe, niepodzielne) – każda kolumna jest wartością skalarną (atomową), a nie macierzą lub listą czy też czymkolwiek, co posiada własną strukturę
     * nie zawiera kolekcji (powtarzających się grup informacji)
