@@ -388,7 +388,7 @@ Algorytm wyznacza rozwiązania w każdym kroku dokonując **zachłannego** (tj. 
 - minimalne drzewo spinające
 - najkrótsza ścieżka w grafie (alg. Dijkstry)
 - szeregowanie zadań
-- wydawanie reszty najmniejszą liczbą monet
+- wydawanie reszty najmniejszą liczbą monet (za kazdym razem wydaje najpierw największy nominał)
 
 # 21. Algorytmy z nawrotami. 
 Wyszukiwanie z nawrotami (************************backtracking************************) jest techniką wyszukiwania wszystkich rozwiązań problemu, która inkrementacyjnie buduje rozwiązanie częściowe, porzucając je, gdy dalsze budowanie nie prowadzi do dopuszczalnego rozwiązania, o czym decyduje stosunkowo prosty test.
