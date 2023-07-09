@@ -104,7 +104,7 @@ Można to zapisać w sposób zwarty:
 
 Gramatyka opisująca liczby parzyste w zapisie binarnym:
 
-G = (V,T,P,S) = $(\{lparz\}, \{0,1\}, \{lparz\rightarrow0\ lparz,  lparz\rightarrow1\ lparz, lparz \rightarrow 0\}, lparz)$
+G = (V,T,P,S) = $(${ $lparz$ } $,$ { $0,1$ } $,$ { $lparz\rightarrow0\ lparz,  lparz\rightarrow1\ lparz, lparz \rightarrow 0$ } $,lparz)$
 
 Do definiowania gramatyk używa się najczęściej wyprowadzeń, czyli produkcji w kierunku $GŁOWA \rightarrow CIAŁO$. Można też używać wnioskowania rekurencyjnego, tj. odwrócić kierunek produkcji $GŁOWA \leftarrow CIAŁO$.
 
