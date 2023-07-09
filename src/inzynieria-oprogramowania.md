@@ -86,7 +86,7 @@ W modelu kaskadowym fazy rozwoju oprogramowania następują sekwencyjnie, aby pr
 
 ### SCRUM
 
-**SCRUM** — iteracyjne i przyrostowe ramy zarządzania procesem produkcyjnym (ang. framework) zgodne ze Scrum Guide. Nie jest to metodyka zwinna, ale są to ramy postępowania (framework), nie ma "dwóch" zespołów pracujących w identycznym scrumie.
+**SCRUM** — iteracyjne i przyrostowe ramy zarządzania procesem produkcyjnym (ang. framework) zgodne ze Scrum Guide. Ramy postępowania (framework), nie ma "dwóch" zespołów pracujących w identycznym scrumie.
 
 * może mieć zastowowani w realizacji procesów produkcyjnych w oparciu o metodyki zwinne
 
