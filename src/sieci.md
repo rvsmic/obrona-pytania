@@ -22,7 +22,7 @@ Jest to protokół *klient-serwer*
 
 Jest dzięki temu bardziej niezawodny, ale mniej prosty i wolniejszy od UDP.
 
-#### Nawiązywanie połączenia
+#### Nawiązywanie połączenia three-way handshake
 
 1. Klient wysyła pakiet `SYN` do serwera
 2. Serwer odpowiada pakietem `SYN-ACK`
